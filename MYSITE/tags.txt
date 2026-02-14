@@ -1,23 +1,68 @@
-What is internet ?
-
-What is web(www)?
-
-What is browser?
-
-What is web Page?
-
-What is server?
-
+what is internet?
+what is web(www)?
+what is browser(client)?
+what is web page?
+what is server?
 what is http?
-
 what is https?
-
 what is ipaddress?
-
-what is loaclhost(127.0.0.1)?
-
+what is localhost(127.0.0.1)?
 what is port?
 
 List of Tags
+================
+html,head,meta,title,body
+
+Heading Tags
+==========================
+h1,h2,h3,h4,h5,h6
+
+a(href,target),
+br,hr
+
+p,pre,article
+
+u,ins,i,em,b,strong,del,strike
+abbr,span,sup,sub,mark,marquee
+bdo,
+
+header,main,menu,nav,aside,section,footer
+
+
+list Tags
+============
+ol,ul,dl,dt,dd,li
+
+image Tags
+==========
+img(src,alt,width,height)
+
+
+table Tags
+===========
+table,th,tr,td,thead,tbody,tfoot,caption
+
+
+form Tags
+==========
+form,label
+input fields
 =============
-html, head, meta, title, body
+    text,number,email,password,radio,checkbox
+    date,datetime,datetime-local,month,week,time
+    file,url,range,color,hidden,search
+    submit,reset,button,image
+    
+    select(option,optiongroup)
+
+    textarea
+
+    datalist
+
+    script
+
+    fieldset
+
+
+
+
