@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login:CSS</title>
+        <style>
+            div{
+                width: 50%;
+                margin-left: auto;
+                margin-right: auto;
+                height: 200px;
+                background-color: #fffafc;
+                margin-top: 100px;
+            }
+            div > h1{
+                text-align: center;
+                background-color: aqua;
+                color: red;
+                margin-top: 40px;
+            }
+            input[type='text'],[type='password']{
+                width: 100%;
+                height: 30px;
+                background-color: bisque;
+                border: 2px solid red;
+                border-radius: 10px;
+                font-size: 20px;
+                padding: 5px 15px;
+                color: rgb(2, 2, 39);
+                box-sizing: border-box;
+                margin-top: 10px;
+            }
+            input[type='submit'],[type='reset']{
+                width: 49%;
+                border: 2px solid blue;
+                height: 30px;
+                margin-top: 10px;
+                float: left;
+                margin-right: 2px;
+                border-radius: 12px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+        <h1>Student Login</h1>
+        <form action="/index.html">
+            <!-- <label for="">User Name :</label> -->
+            <input type="text" name="" id="" placeholder="User Name">
+            <!-- <label for="">Password :</label> -->
+            <input type="password" name="" id="" placeholder="Password">
+            <input type="submit" value="Login">
+            <input type="reset" value="Cancel">
+        </form>
+        </div>
+    </body>
+</html>

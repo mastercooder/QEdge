@@ -1,0 +1,20 @@
+header{
+    text-align: center;
+    background-color: aquamarine;
+    color: red;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+main{
+    text-align: center;
+    color: blue;
+}
+footer{
+    text-align: center;
+    background-color: darkblue;
+    color: aliceblue;
+    position:fixed;
+    width: 100%;
+    bottom: 0.5%;
+}

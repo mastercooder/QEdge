@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images: CSS</title>
+    <style>
+        .images{
+            margin: 5px;
+            border: 1px solid red;
+            width: 270px;
+            float: left;
+        }
+        .images > img{
+            width: inherit;
+            border: 2px dashed blue;
+            height: 160px;
+        }
+        .aboutImg{
+            padding: 5px;
+            color: rgb(6, 6, 53);
+            text-align: justify;
+            background-color: aliceblue;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <div class="images">
+        <img src="/assets/images/java.jpg" alt="java_img"> 
+        <div class="aboutImg">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem vitae, corrupti explicabo sit minima perspiciatis.
+        </div>
+    </div>
+    <div class="images">
+        <img src="/assets/images/js.jpg" alt="java_img"> 
+        <div class="aboutImg">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem vitae, corrupti explicabo sit minima perspiciatis.
+        </div>
+    </div>
+    <div class="images">
+        <img src="/assets/images/next.jpg" alt="java_img"> 
+        <div class="aboutImg">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem vitae, corrupti explicabo sit minima perspiciatis.
+        </div>
+    </div>
+    <div class="images">
+        <img src="/assets/images/react.jpg" alt="java_img"> 
+        <div class="aboutImg">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem vitae, corrupti explicabo sit minima perspiciatis.
+        </div>
+    </div>
+</body>
+</html>

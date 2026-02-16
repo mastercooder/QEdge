@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>selectors:CSS</title>
+        <style>
+            /* tag selector */
+            h4{
+                color: brown;
+            }
+            /* class selector , combinator */
+            .header,.footer{
+                text-align: center;
+                background-color: aquamarine;
+                color: red;
+            }
+            /* class selector */
+            .main1{
+                text-align: center;
+                color: blue;
+            }
+            /* id selector and discendant selector */
+            .main1 > #h3_2{
+                background-color: bisque;
+            }
+            /* attribute selector */
+            a[href="/index.html"]{
+                font-size: 25px;
+                text-decoration: none;
+                background-color: bisque;
+                color: red;
+            }
+            /* psuedo class selector */
+            .header:hover{
+                background-color: rgb(4, 4, 36);
+                color: aliceblue;
+            }
+            /* universal selector */
+            *{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Web App Development:CSS</h1>
+            <a href="/index.html">HOME</a>
+            <a href="/pages/inline.html">inline</a>
+            <a href="/pages/internal.html">internal</a>
+            <a href="/pages/external.html">External</a>
+        </div>
+        <div class="main1">
+            <h3>Selectors Page</h3>
+            <h3 id="h3_2">Selectors Page</h3>
+            <h3>Selectors Page</h3>
+        </div>
+        <div class="main2">
+            <h3>Selectors Page</h3>
+            <h3 id="h3_2">Selectors Page</h3>
+            <h3>Selectors Page</h3>
+            <h4>Good Morning</h4>
+        </div>
+        <div class="footer">
+            <h1>Thanks for visiting mysite</h1>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Grid:CSS</title>
+        <style>
+            .griditem1{grid-area: header;height: 50px;}
+            .griditem2{grid-area: menuitems;height: 30px;line-height: 30px;}
+            .griditem3{grid-area: left; height: 400px;}
+            .griditem4{grid-area: main;margin: 0px;}
+            .griditem5{grid-area: fitem1;height: 70px;}
+            .griditem6{grid-area: fitem2;}
+            .griditem7{grid-area: fitem3;}
+            .container{
+                display: grid;
+                grid-template-areas: 'header header header header header header header header header header header header'
+                                     'menuitems menuitems menuitems menuitems menuitems menuitems menuitems menuitems menuitems menuitems menuitems menuitems'
+                                     'left left main main main main main main main main main main'
+                                     'fitem1 fitem1 fitem1 fitem2 fitem2 fitem2 fitem2 fitem2 fitem2 fitem3 fitem3 fitem3';
+                text-align: center;
+                /* background-color: bisque; */
+                border: 2px solid blue;
+                row-gap: 10px;
+                column-gap: 5px;                    
+            }
+            .container > div{
+                /* background-color: aqua; */
+                padding: 2px;
+                border: 1px solid red;
+            }
+            .container > div > marquee > a{
+                margin-right: 10px;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="griditem1">
+                <a href="">Logo</a>
+            </div>
+            <div class="griditem2">
+                <marquee behavior="" direction="">
+                    <a href="">Python</a>
+                    <a href="">java</a>
+                    <a href="">javaScript</a>
+                    <a href="">React</a>
+                    <a href="">Django</a>
+                    <a href="">Machine Learning</a>
+                    <a href="">NLP</a>
+                </marquee>
+            </div>
+            <div class="griditem3">Left</div>
+            <div class="griditem4">
+                <img src="" alt="" width="150px" height="100px">
+                <img src="" alt="" width="150px" height="100px">
+                <img src="" alt="" width="150px" height="100px">
+                <img src="" alt="" width="150px" height="100px">
+            </div>
+            <div class="griditem5">FItem1</div>
+            <div class="griditem6">FItem2</div>
+            <div class="griditem7">FItem3</div>
+        </div>
+    </body>
+</html>

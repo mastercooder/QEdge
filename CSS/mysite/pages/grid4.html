@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Grid4:CSS</title>
+        <style>
+            .griditem1{
+                grid-area: header;
+                padding: 10px;
+            }
+            .griditem2{
+                grid-area: left;
+                height: 450px;
+            }
+            .griditem3{grid-area: main;}
+            .griditem4{grid-area: right;}
+            .griditem5{
+                grid-area: footer;
+                height: 70px;
+            }
+            .container{
+                display: grid;
+                grid-template-areas: 'header header header'
+                                     'left main right'
+                                     'footer footer footer';
+                background-color: lightblue;
+                grid-template-columns: 2fr 8fr 2fr;
+                gap: 5px;
+                padding: 5px;
+            }
+            .container > div{
+                background-color: burlywood;
+                padding: 3px;
+            }
+            .container > .griditem2 > ul > li {
+                list-style-type: none;
+                padding: 10px 0px;
+            }
+            .container > .griditem2 > ul > li > a {
+                text-decoration: none;
+                color: red;
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="griditem1">Header</div>
+            <div class="griditem2">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">Login</a></li>
+                    <li><a href="">SignUp</a></li>
+                </ul>
+            </div>
+            <div class="griditem3">Main</div>
+            <div class="griditem4">Right</div>
+            <div class="griditem5">Footer</div>
+        </div>
+    </body>
+</html>

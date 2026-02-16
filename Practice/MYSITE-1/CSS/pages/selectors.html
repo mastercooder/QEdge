@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectors: CSS</title>
+    <style>
+        /* Tag Selector */
+        h4{
+            color: red;
+        }
+
+        /* Class Selector, Combinator */
+        .header, .footer{
+            color: red;
+            text-align: center;
+            background-color: antiquewhite;
+        }
+        .main{
+            text-align: center;
+            color: blue;
+        }
+
+        /* Id Selector and Decendent Selctor */
+        main > #h3_2{
+            background-color: antiquewhite;
+        }
+
+        /* Attribute Selector */
+        a[href="/index.html"]{
+            font-size: 25px;
+            text-decoration: none;
+            background-color: bisque;
+            color: red;
+        }
+
+        /* Psuedo Class Selector */
+        .header:hover{
+            background-color: darkblue;
+            color: aliceblue;
+        }
+
+        /* Universal Selector */
+        *{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Web App Development: CSS</h1>
+        <a href="/index.html">HOME</a>
+        <a href="/pages/inline.html">Inline</a>
+        <a href="/pages/internal.html">Internal</a>
+        <a href="/pages/external.html">External</a>
+    </div>
+    <div class="main">
+        <h3>Selectors Page</h3>
+        <h3 id="h3_2">Selectors Page</h3>
+        <h3>Selectors Page</h3>
+        <h4>Good Morning</h4>
+    </div>
+    <div class="footer">
+        <h1>Thanks for visiting mysite</h1>
+    </div>
+</body>
+</html>

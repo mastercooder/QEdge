@@ -1,0 +1,12 @@
+header, menu{
+    text-align: center;
+}
+
+footer{
+    text-align: center;
+    position: fixed;
+    bottom: 0.5%;
+    width: 100%;
+    background-color: yellow;
+    color: blue;
+}
