@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MenuItems: CSS</title>
+    <style>
+        ul{
+            list-style-type: none;
+            background-color: rgb(1, 1, 26);
+            overflow: hidden;
+        }
+        ul > li {
+            float: left;
+            padding: 10px;
+            display: block;
+            border-right: 1px solid aliceblue;
+        }
+        ul > li:hover:not(.home){
+            background-color: aqua;
+        }
+        ul > li > a{
+            text-decoration: none;
+            color: aliceblue;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="" class="home" >Home</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Contact</a></li>
+        <li style="float: right; border-right: none;"><a href="">Login</a></li>
+        <li style="float: right;"><a href="">SingUp</a></li>
+    </ul>
+</body>
+</html>

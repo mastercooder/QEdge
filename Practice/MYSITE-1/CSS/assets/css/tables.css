@@ -1,0 +1,38 @@
+table{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+caption{
+    background-color: aqua;
+    color: darkblue;
+    height: 40px;
+    line-height: 40px;
+    font-size: 25px;
+    border: 2px solid blue;
+    margin-top: 50px;
+}
+table, th, td{
+    border: 1px solid red;
+    border-collapse: collapse;
+}
+th{
+    background-color: bisque;
+    color: red;
+    height: 30px;
+    font-style: italic;
+}
+tr:nth-child(even){
+    background-color: lightgoldenrodyellow;
+}
+tr:hover{
+    background-color: darkblue;
+    color: aliceblue;
+    text-align: center;
+    height: 45px;
+    text-transform: uppercase;
+}
+td{
+    text-align: center;
+    height: 30px;
+}

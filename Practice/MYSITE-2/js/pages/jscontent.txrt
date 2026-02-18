@@ -1,0 +1,17 @@
+1. Variable Creation
+    var, let, const
+
+2. Data Type
+    Number, Bigint, String, Boolen, Undefined, NULL
+
+    Number ==> -5, -4, -3, 0, 1, 2, .4, .6, Infinity, NaN
+    Bigint ==> 2**53-1 above values
+    String ==> 'data', "data", `data`
+    Boolen = true, false
+    Undefined, var a
+    null
+
+3. Operators
+    arithmatic Operators
+    =====================
+    +, -, 
