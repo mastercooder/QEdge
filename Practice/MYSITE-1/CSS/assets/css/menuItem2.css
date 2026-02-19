@@ -11,6 +11,8 @@ ul > li{
     float: left;
     font-size: 25px;
     border-right: 1px solid bisque;
+    height: 60px;
+    line-height: 30px;
 }
 ul > li > a{
     display: block;
@@ -24,4 +26,9 @@ ul > li:nth-child(7){
 ul li a:hover:not(.home){
     background-color: aqua;
     color: red;
+}
+.home{
+    background-color: bisque;
+    color: red;
+    height: inherit;
 }
