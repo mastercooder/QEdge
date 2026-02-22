@@ -1,0 +1,94 @@
+Array:
+=====
+
+var ar1 = [10,20,30,40,50];
+console.log(ar1);
+
+var ar2 = [10.45,10,1.45,100];
+console.log(ar2);
+
+var ar3 = ['javascript','java','python','react'];
+console.log(ar3);
+
+var ar4 = [101,'javascript',10.45,null,true,false,undefined];
+console.log(ar4);
+
+
+var  ar5 = new Array();  // here Array has been declared
+console.log(ar5);
+
+var  ar6 = new Array([10,20,30,40,50]);  // here Array has been declared
+console.log(ar6);
+
+var  ar7 = new Array(100,200,300,400,500);  // here Array has been declared
+console.log(ar7);
+
+var ar8 = [];
+console.log(ar8);
+
+updating existing array element:
+===============================
+var ar1 = [10,20,30,40,50];
+console.log(ar1);
+ar1[1] = 20000;
+console.log(ar1);
+
+var ar1 = [10,20,30,40,50]
+ar1[5] = 600;
+console.log(ar1[5]); //  600
+console.log(ar1); // [10,20,30,40,50,600]
+
+var ar1 = [10,20,30,40,50]
+ar1[6] = 700;
+console.log(ar1); // [10, 20, 30, 40, 50, empty, 700]
+console.log(ar1[5]); // undefined
+ar1[5] = 600;
+console.log(ar1);
+
+// destructuring
+
+let ar1  =  [10,20,30]
+
+let [a,b,c] = ar1;   // destrucring
+console.log(a);
+console.log(b);
+console.log(c);
+
+let [a,b,c] = [100,200,300,400,500];
+console.log(a);
+console.log(b);
+console.log(c);
+
+reading array with for loop;
+===========================
+var ar1 = [10,20,30,40,50];
+for (let i in ar1){
+    console.log(i);
+}
+
+var ar1 = [10,20,30,40,50];
+for (let i of ar1){
+    console.log(i);
+}
+
+var ar1 = [10,20,30,40,50];
+for (let i in ar1){
+    console.log(i+":"+ar1[i]);
+}
+
+
+let stdinfo = {};
+[stdinfo.sid,stdinfo.sname,stdinfo.course,stdinfo.fee] = "1001,Ravi,python,1000".split(",");
+
+
+for ( [key,value] of Object.entries(stdinfo)){
+    console.log(key);
+}
+
+
+for ( [key,value] of Object.entries(stdinfo)){
+    console.log(ke+":"+value);
+}
+
+
+

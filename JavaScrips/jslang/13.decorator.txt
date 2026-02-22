@@ -1,0 +1,32 @@
+decorator
+=======
+
+function f1(){
+    function f2(){
+        return "welcome";
+    }
+    return f2;
+}
+
+var f3 = f1();
+
+function f1(fun){
+    function f2(){
+        console.log("****Beforecode*****");
+        fun();
+        console.log("######aftercode#####");
+    }
+    return f2;
+}
+
+function login(){
+    console.log("Login Success");
+}
+
+function logout(){
+    console.log("Logout Success");
+}
+
+var login = f1(login);
+var logout = f1(logout);
+

@@ -1,0 +1,284 @@
+Working with strings in javascript
+=================================
+var str1 = "welcome"
+
+console.log("welcome to raju"s classes"); ==> wrong
+// \ ==> escape character
+console.log("welcome to raju\"s classes") ==> correct
+console.log('welcome to raju"s classes') ==> correct
+
+console.log('welcome to raju's classes') ==> wrong
+console.log('welcome to raju\'s classes') ==> correct
+console.log("welcome to raju's classes") ==> correct
+
+special characters
+==================
+console.log("welcome \n to  \n javascript \n prograaming");
+console.log("javascript \t programmng");
+console.log('welcome \\tjavascript')
+
+
+string Methods
+==============
+let str1 = "welcome";
+
+Indexing
+========
+str1[0]  // 
+
+//method1 : anchor
+console.log(str1.anchor())
+console.log("HOME".anchor("home"))
+document.write("HOME".anchor("home"))
+
+// method2: at
+console.log("welcome".at(-1)); //==> 'e'
+
+method3 : 
+console.log(str1.big());
+<script>
+    let str1 = "welcome";
+    document.write(str1.big());
+</script>
+
+method4:
+=======
+let str1 = "welcome";
+str1.charAt(2); // l
+
+
+method4:
+=======
+let str1 = "welcome";
+str1.codePointAt(1); // ascii value
+
+
+method5:
+========
+let str1 = "welcome";
+str1.concat(" to javascript");
+
+
+
+
+method6:
+========
+let str1 = "welcome";
+str1.endsWith('e');
+
+
+
+method8:
+========
+let str1 = "welcome";
+str1.fixed()
+
+
+method9:
+========
+let str1 = "welcome";
+str1.fontcolor('red');
+document.write(str1.fontcolor("red"));
+
+
+method10:
+========
+let str1 = "welcome";
+str1.fontsize(10);
+document.write(str1.fontsize(10));
+
+
+method11:
+========
+var str1 = "welcome";
+str1.includes("come");
+str1.includes("come",3);
+
+
+method12:
+========
+let str1 = "welcome";
+str1.indexOf('e')
+str1.indexOf('e',3)
+
+find valid email address or second occurance
+============================================
+email=prompt("Enter email address");
+console.log(email.indexOf('@',email.indexOf('@')+1))
+if(email.indexOf('@',email.indexOf('@')+1)==-1){
+    console.log("Valid Email Address")
+} else {
+    console.log("Invalid Email")
+}
+
+
+method13:
+========
+let str1 = "welcome";
+
+
+
+method14:
+========
+let str1 = "welcome";
+str1.isWellFormed()
+
+
+method15:
+========
+let str1 = "welcome";
+document.write(str1.italics());
+
+
+method16:
+========
+let str1 = "welcome";
+str1.lastIndexOf('e');
+
+
+method17:
+========
+let str1 = "welcome";
+str1.length
+
+
+method18:
+========
+let str1 = "welcome";
+"FACEBOOK".link("https://www.facebook.com");
+document.write("FACEBOOK".link("https://www.facebook.com"));
+
+
+method19:
+========
+let str1 = "welcome";
+str1.padEnd(10,"*");
+
+
+method20:
+========
+let str1 = "welcome";
+str1.padStart(10,"*");
+
+
+method21:
+========
+let str1 = "welcome ";
+str1.repeat(2)
+
+
+method22:
+========
+let str1 = "welcome";
+str1.replace('e','a');
+
+
+method23:
+========
+let str1 = "welcome";
+str1.replaceAll('e','a')
+
+
+method24:
+========
+let str1 = "welcome";
+str1.slice(2,5);
+
+
+
+method25:
+========
+let str1 = "welcome";
+'<small>welcome</small>'
+document.write('<small>welcome</small>');
+
+
+method26:
+========
+let str1 = "welcome";
+str1.split();
+str1.split("");
+"101,ravi,python,5000,kumar".split(",")
+"101,ravi,python,5000,kumar".split(",",3)
+
+
+method27:
+========
+let str1 = "welcome";
+str1.startsWith('w')
+str1.startsWith('c',3)
+
+
+method28:
+========
+var str1 = "welcome";
+str1.strike();
+document.write(str1.strike());
+
+
+
+method29:
+========
+var str1 = "2";
+document.write("Log"+str1.sub());
+
+
+
+method30:
+========
+var str1 = "welcome";
+str1.substr(3,2)
+str1.substr(3,2)
+
+
+method31:
+========
+let str1 = "welcome";
+str1.substring(2,5);
+
+
+
+method32:
+========
+let str1 = "2";
+str1.sup("3");
+document.write(str1.sup("3"));
+
+
+method33:
+========
+let str1 = "WELCOME";
+str1.toLowerCase();
+
+
+method34:
+========
+var str1 = "welcome";
+str1.toUpperCase();
+
+
+
+
+method37:
+=========
+"    wel come     ".trim(" ")
+"****wel come*****".trim("*")
+"****wel come*****    ".trim("*")
+
+
+method38:
+=========
+"welcome    ".trimEnd()
+"welcome***".trimEnd()
+
+
+
+method39:
+=========
+"    welcome".trimEnd();
+"*****welcome".trimEnd();
+
+
+method40:
+=========
+

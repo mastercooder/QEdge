@@ -1,0 +1,109 @@
+Object: Object contains key, value as pairs
+key, value called property
+
+var obj1 = {
+    'a':'apple'  // property 
+} 
+
+object property:
+===============
+a ==> property key 
+apple ==> property value
+
+How to create objects
+=====================
+
+var obj1 = {
+    'a': 'apple',
+    'b': 'banana',
+    'c': 'cherry'
+};
+console.log(obj1);
+console.log(obj1['a']);
+console.log(obj1[a]);  // error
+console.log(obj1.a);
+
+var obj2 = {
+    a: 'apple',
+    b: 'banana',
+    c: 'cherry'
+};
+
+console.log(obj2);
+console.log(obj2['a']);
+console.log(obj2[a]);  // error
+console.log(obj2.a);
+
+var obj3 = {
+    1: 'apple',
+    2: 'banana',
+    3: 'cherry'
+};
+
+console.log(obj3);
+console.log(obj3['1']);
+console.log(obj3[1]);  
+console.log(obj3.1);  //error
+
+var obj4 = {
+    '1': 'apple',
+    '2': 'banana',
+    '3': 'cherry'
+};
+console.log(obj4);
+console.log(obj4['1']);
+console.log(obj4[1]);  
+console.log(obj4.1);  //error
+
+var student = {sid:101,sname:'kumar',course:'js',fee:4000}
+console.log(student);
+console.log(student[sid]); //error
+console.log(student['sid']);  
+console.log(student.sid);  
+
+var studentinfo = {
+    101:['ravi','js',5000,'venkat'],
+    102:['ramu','python',3000,'swamy']
+}
+console.log(studentinfo);
+console.log(studentinfo[101]); 
+console.log(studentinfo['101']);  
+console.log(studentinfo.101);  // error
+
+var studentdata = {
+    101 : {name:'kumar',course:'python',fee:6000,trainer:'indra'},
+    102 : {name:'krishna',course:'java',fee:3000,trainer:'chppanu'},
+}
+console.log(studentdata);
+console.log(studentdata[101]); 
+console.log(studentdata[101].name);  
+console.log(studentdata[101].course);
+
+//empty object creation
+let student = {};
+
+//adding propeties into existing object
+student.sid = 101;
+console.log(student);
+//retrive
+console.log(student.sname);
+//update
+student.sname = 'venkatesh';
+console.log(student);
+//delete
+delete student[sid]
+
+//object with duplicate property
+let obj1 = {1:100,2:200,1:120,3:300}
+console.log(obj1);
+
+
+
+
+
+
+
+
+
+
+

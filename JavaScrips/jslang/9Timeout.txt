@@ -1,0 +1,70 @@
+// Scheduling with setTimeout and setInterval
+
+setTimeout:
+    it will allow you to run a function with delay time
+    It will wait till delay time to run the function
+    Every setTimeout has timer id 
+
+function f1(){
+    console.log("Welcome to javascript");
+}
+let tid = setTimeout(f1,4000)
+
+function f2(a,b){
+    console.log(a+b);
+}
+
+let tid = setTimeout(f2,5000,10,20);
+
+let tid = setTimeout((a,b)=>console.log(a+b),4000
+,100,200)
+
+// to cancel setTimeout
+
+let tid = setTimeout((a,b)=>console.log(a+b),10000,100,200)
+clearTimeout(tid); // it will stop timer
+
+//setInterval
+
+let tid = setInterval(()=>console.log("Good Morning"),3000)
+
+clearInterval(tid)
+
+//every 2 seconds  and timeout for 10 seconds
+
+let tid = setInterval(()=>console.log("Hi.."),3000)
+setTimeout(()=>clearInterval(tid),20000)
+
+
+let tid = setInterval(()=>console.log("Loading...."),2000)
+setTimeout(()=>{
+    clearInterval(tid);
+    console.log("Timer Stopped")
+    },20000)
+
+
+
+let tid = setInterval(()=>document.write("<h1>Hi</h1>\n"),2000)
+setTimeout(()=>{
+    clearInterval(tid);
+    console.log("Timer Stopped")
+    },20000)
+
+
+======================================================
+function f1(){
+    console.log('Loading.....');
+}
+
+function f2(){
+    console.log("Loading Completed");
+    clearInterval(tid);
+}
+
+var tid = setInterval(f1,2000);
+setTimeout(f2,10000)
+
+===========================================================
+
+
+

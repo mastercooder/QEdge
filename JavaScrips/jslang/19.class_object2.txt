@@ -1,0 +1,382 @@
+OOPS
+=====
+1. inheritance
+    single inheritance
+=================================
+class c1{
+    a = 100
+    m1(){
+        return "m1 of c1";
+    }
+}
+
+class c2 extends c1{
+    b = 200
+    m2(){
+        return "m2 of c2";
+    }
+}
+
+1. inheritance
+    multiline inheritance
+=================================
+class c1{
+    a = 100
+    m1(){
+        return "m1 of c1";
+    }
+}
+
+class c2 extends c1{
+    b = 200
+    m2(){
+        return "m2 of c2";
+    }
+}
+
+class c3 extends c2{
+    c = 300
+    m3(){
+        return "m3 of c3";
+    }
+}
+=======================================================
+1. inheritance
+    1.3 multiple inheritance
+
+deriving class from 2 classes
+
+
+
+========================================================
+
+1. inheritance
+    1.3 hierarchical inheritance
+
+class c1{
+    a = 100
+    m1(){
+        return "m1 of c1";
+    }
+}
+
+class c2 extends c1{
+    b = 200
+    m2(){
+        return "m2 of c2"
+    }
+}
+
+class c3 extends c1{
+    c = 300
+    m3(){
+        return "m3 of c3";
+    }
+}
+
+========================================================
+
+1. inheritance
+    1.4 hybrid inheritance
+
+
+======================================================
+
+2. Polymorphism
+===============
+    2.1 method overloading
+        implementation of more than one method with same name
+    2.2 method overriding
+        parent and child will have one method with same name
+
+====================================================
+class x{
+    a = 100
+    m1(){
+        return "first m1";
+    }
+    m1(){
+        return "second m1";
+    }
+}
+===========================================
+class c1{
+    a = 100
+    m1(a){
+        return "First m1 "+a;
+    }
+    m1(a,b){
+        return "second m1"+a+" "+b;
+    }
+}
+
+let obj1 = new c1();
+==================================================
+
+class c1{
+    a = 100
+    m1(a){
+        return "First m1 "+a;
+    }
+    m1(a,b){
+        return "second m1"+a+" "+b;
+    }
+    m1(a,b,c){
+        return "second m1"+a+" "+b+" "+c;
+    }
+}
+
+let obj1 = new c1();
+console.log(obj1.m1())
+
+=====================================================
+class c1{
+    a = 100
+    m1(){
+        if (arguments.length==0) {
+            return "First M1";
+        } else if (arguments.length==1 && typeof arguments[0]=='number'){
+            return "second M1"
+         } else if (arguments.length==1 && typeof arguments[0]=='string'){
+            return "Third M1"
+        } else if (arguments.length==2){
+            return "Fourth M1"
+        }
+    }
+}
+
+let obj1 = new c1();
+
+=======================================================
+
+2.2 method overriding
+    creating same method name in parent and child
+
+class c1{
+    m1(){
+        return "m1 of c1"
+    }
+}
+class c2 extends c1{
+    m1(){
+        return "m1 of c2"
+    }
+}
+let obj1 = new c2();
+
+=====================================================
+class c1{
+    m1(){
+        return "Good Morning ";
+    }
+}
+class c2 extends c1{
+    m1(name){
+        return super.m1()+name;
+    }
+}
+let obj1 = new c2();
+
+=============================================
+class c1{
+    sal(basic){
+        let hra = basic/100*40;
+        var da = basic/100*30;
+        var ta = basic/100*20;
+        return basic + hra + da + ta;
+    }
+}
+class c2 extends c1{
+    sal(basic){
+        return super.sal(basic);
+    }
+}
+let obj1 = new c2();
+obj1.sal(12000);
+
+
+class parent{
+    m1(basic){
+        let hra = basic/100*40;
+        var da = basic/100*30;
+        var ta = basic/100*20;
+        return  hra + da + ta;
+    }
+    m2(basic){
+        let hra = basic/100*40;
+        var da = basic/100*30;
+        var ta = basic/100*20;
+        return  basic+hra + da + ta;
+    }
+}
+
+class child extends parent{
+    b = 200
+    m1(sal){
+        return super.m1(sal) + sal
+    }
+    m2(sal){
+        return super.m1(sal)
+    }
+}
+let obj1 = new c2();
+obj1.m1(12000);
+obj1.m2(12000);
+
+===================================================
+class parent{
+    a = 100
+    m1(){
+        return parent.a
+    }
+}
+
+class child extends parent{
+    a = 200
+    m2(){
+        return this.a
+    }
+}
+
+obj1 = new child()
+
+
+
+class c1{
+    a = 100;
+    m1(){
+        let a = this.a;
+        return a;
+    }
+}
+
+class c2 extends c1{
+    a = 200
+    m1(){
+        return "m1 of c2 , "+this.a+" "+super.m1();
+    }
+}
+
+let obj1 = new c2();
+========================================================
+class c1{
+    static a = 100;
+    m1(){
+        let a = c1.a;
+        return a;
+    }
+}
+
+class c2 extends c1{
+    a = 200
+    m1(){
+        return "m1 of c2 , "+this.a+" "+super.m1();
+    }
+}
+
+let obj1 = new c2();
+=======================================================
+Encapsulation
+==============
+data hiding ==>  public , protected , private
+=============================================
+Public : It is accessible from anywhere 
+    variableName = 100;
+protected: 
+    _variable = 100
+Private : accessible only from inside the class 
+    #variableName = 200
+
+class x{
+    a = 0
+    set a(v){
+        if(v < 0 ) {
+            a = 0;
+        } else {
+            this.a = v;
+        }
+    }
+    get a(){
+        return this.a;
+    }
+    constructor(b){
+        this.b = b;
+    }
+}
+
+let obj1 = new x();
+let obj1 = new x(100);
+obj1.a = -30;
+console.log(obj1);
+
+class x{
+    constructor(a){
+        this._a = a;
+    }
+    get a(){
+        return this._a;
+    }
+}
+
+let obj1 = new x(222);
+console.log(obj1.a);
+console.log(obj1._a);
+obj1.a = 333;
+
+
+class Car{
+    tyres = 4
+    _topspeed = 250
+    constructor(color){
+        this.color = color
+    }
+    get topspeed(){
+        return this._topspeed;
+    }
+}
+
+let car1 = Car("Red",200);
+
+
+
+Private properties in javascript
+================================
+    #variableName = value  // private property
+
+class x{
+    #a = 100
+    #fixA(v){
+        if(v<0){
+            return 0;
+        }
+        if(v<this.#a){
+            return this.#a;
+        }
+    }
+    setA(v){
+        this.#a = this.#fixA(v);
+    }
+}
+
+let xobj1 = new x();
+
+xobj1.#fixA(10);  // Error
+
+============================================
+
+class x{
+    #a = 100;
+    showA(){
+        return #a;
+    }
+}
+
+let xobj1 = new x();
+xobj1.#a = 200;
+console.log(xobj1);
+console.log(xobj1.showA());
+
+
+
+
+

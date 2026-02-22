@@ -1,0 +1,113 @@
+callbacks
+========
+function f1(){
+    console.log("welcome");
+}
+
+setTimeout(f1,5000);
+
+
+function cal(fun,a,b){
+    return fun(a,b)
+}
+
+
+function add(a,b){
+    return a+b
+}
+
+function sub(a,b){
+    return a-b
+}
+
+function mul(a,b){
+    return a*b
+}
+
+
+cal(add,2,3)
+cal(sub,4,2)
+cal(mul,2,3)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Promise:
+=======
+let promise = new Promise(function(resolve,reject){
+    if(true){
+        resolve(value);
+    } else {
+        reject(error);
+    }
+});
+
+let p = new Promise(function f1(resolve,reject) {
+  if(true){ 
+      resolve("Done");
+  } else {
+      reject("Not Done");
+  }
+});
+
+console.log(p);
+
+let p = new Promise(function f1(resolve,reject) {
+  if(false){ 
+      resolve("Done");
+  } else {
+      reject("Not Done");
+  }
+});
+
+console.log(p);
+
+let p = new Promise(function f1(resolve,reject) {
+    resolve("Done");
+});
+
+console.log(p);
+
+
+let p = new Promise(function f1(resolve,reject) {
+    reject("Not Done");
+});
+
+console.log(p);
+
+
+let p = new Promise(function f1(f2,f3) {
+    f2("Done");
+});
+
+console.log(p);
+
+
+let p = new Promise(function f1(f2,f3) {
+    f3("Not Done");
+});
+
+console.log(p);
+
+let p = new Promise(function f1(f2,f3) {
+    if(payment===true){
+        f2("Done");
+    } else {
+        f3("Not Done");
+    }
+});
+
+console.log(p)
+
+
+

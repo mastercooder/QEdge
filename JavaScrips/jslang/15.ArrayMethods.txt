@@ -1,0 +1,508 @@
+Array Methods
+============
+
+let ar1 = [10,20,30,40,50]
+
+typeof ar1  // object
+
+Array.isArray(ar1)   // true
+
+let obj1 = {a:100,b:200,3:300};
+typeof obj1;    // object
+Array.isArray(obj1);  // false
+
+
+//positive index
+ar1[0]
+
+//negative index
+ar1.at(-1);
+
+
+Map
+===
+It will execute a function and creates 
+new array with all return values of a function
+that is passed to array map Methods
+
+
+var ar1 = [1,2,3,4,5]
+
+function f1(n){
+    return n*n;
+}
+
+ar1.map(f1);
+
+ar1.map((n)=> n+n);
+
+[10,20,30,40,50].map((n)=>n+n); 
+
+* update employees salaries with 10% bonus
+* applying a client logic for each and every product price,
+
+Filter
+=======
+var ar1 = [1,2,3,4,5,6,7,8,9,10];
+
+function f1(n){
+    if(n%2==0){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+ar1.filter(f1);  // [2,4,6,8,10]
+
+
+function odd(n){
+    return n%2;
+}
+
+function even(n){
+    return !(n%2);
+}
+
+var emps = {
+    101:{name:'ravi',sal:3000,job:'marketing',course:'python'},
+    102:{name:'ramu',sal:2000,job:'marketing',course:'python'},
+    103:{name:'kiran',sal:4000,job:'sales',course:'python'},
+    104:{name:'ravi',sal:3000,job:'research',course:'python'},
+    105:{name:'ravi',sal:2500,job:'marketing',course:'python'},
+}
+
+for ( let i in emps){
+    console.log(i)
+}
+
+for ( let i in emps){
+    console.log(emps[i])
+}
+
+function findmarketing(obj){
+    if(obj.job==='marketing'){
+        return true
+    }
+}
+
+function bonus(sal){
+    return sal*10;
+}
+
+reduce
+======
+var ar1 = [1,2,3,4,5];
+
+function add(a,b){
+    return a+b;
+}
+
+ar1.reduce(add);  // 15
+ar1.reduce(add,10);  // 25
+
+ar1.filter(findmarketing).map(bonus).reduce(add)
+
+
+function myreduce(fun,initial){
+    ar2 = [1,2,3,4,5]
+    itr1 = ar2.values()
+    if(initial==undefined){
+        a = itr1.next().value
+        for (let b of itr1){
+            a = fun(a,b)
+        }
+        return a;
+    } else {
+        a = initial
+        for(let b of itr1){
+            a = fun(a,b)
+        }
+        return a;
+    }
+}
+
+
+reduceRight
+===========
+var ar1 = [1,2,3,4,5];
+
+function add(a,b){
+    return a+b;
+}
+
+ar1.reduceRight(add);  // 15
+ar1.reduceRight(add,10);  // 25
+
+every
+======
+var ar1 = [2,4,6,8,10,12];
+
+function even(n){
+    if (n%2==0){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+ar1.every(even);  // true
+[true,true,true,true,false,true]
+
+var ar1 = [2,4,6,8,10,12,13];
+ar1.every(even); 
+
+some
+====
+var ar1 = [2,4,6,8,10,12,13];
+
+function odd(n){
+    if(n%2!=0){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+ar1.some(odd);  // true
+var ar1 = [2,4,6,8,10,12];
+[false,false,false,true,false,false,false]
+ar1.some(odd);  // false
+
+
+forEach
+=======
+var ar1 = [1,2,3,4,5];
+
+function f1(n){
+    return n+n;
+}
+
+function f2(n){
+    console.log(n+n);
+}
+
+ar1.forEach(f1); 
+
+ar1.forEach(f2)
+
+
+shift: It will remove first element
+==================================
+var ar1  = [10,20,30,40,50];
+ar1.shift()
+
+
+unshift:It will add one or more elements 
+at very starting of the given array
+======================================
+var ar1  = [10,20,30,40,50];
+ar1.unshift(100);
+ar1.unshift(200,300);
+
+
+pop: It will remove last element
+================================
+var ar1  = [10,20,30,40,50];
+ar1.pop()
+ar1.pop(1)   // it will remove last element only
+
+
+push:it will add one or more elements at last 
+==========================================
+var ar1  = [10,20,30,40,50];
+ar1.push(60);
+ar1.push(70,80);
+
+
+entries
+=======
+var ar1 = [10,20,30,40,50];
+
+var itr1 = ar1.entries()
+
+itr1.next();   // iterator object with index,element
+
+itr1.next().value;  //  [1,20]
+
+itr1.next().value[1];  //  30
+====================================
+var ar1 = [10,20,30,40,50];
+var itr1 = ar1.entries();
+for(let i of itr1){
+    console.log(i);
+};
+======================================
+var ar1 = [10,20,30,40,50];
+var itr1 = ar1.entries();
+for(let i of itr1){
+    console.log(i[1]);
+};
+=====================================
+
+values
+======
+
+var ar1 = [10,20,30,40,50];
+var itr1 = ar1.values();
+itr1.next();
+for(let i of itr1){
+    console.log(i);
+};
+
+splice
+=======
+let ar1 = [10,20,30,40,50];
+ar1.splice(2,2)
+
+let ar1 = [10,20,30,40,50];
+ar1.splice(2,2,...[300,400])
+
+
+let ar1 = [10,20,30,40,50];
+ar1.splice(2,2,...[300,400,500,600])
+
+
+let ar1 = [10,20,30,40,50];
+ar1.splice(2,2,300,400,500,600)
+
+
+let ar1 = [10,20,30,40,50];
+let ar2 = [11,22,33];
+ar1.splice(2,2,...ar2)
+
+
+slice:It will extract elements and display
+as per start and end positions
+end position is not included
+start and end both are optional
+=========================================
+let ar1 = [10,20,30,40,50,60,70,80,90];
+ar1.slice(3,7)
+ar1.slice(5)
+ar1.slice()
+
+
+concat
+======
+let ar1 = [10,20,30,40,50]
+ar1.concat(60,70);
+
+ar1.concat([60,70]);
+
+let ar2 = ar1.concat([60,70]);
+
+let ar1 = [10,20,30,40,50];
+let obj1 = {1:100,2:200};
+ar1.concat(obj1);
+
+let ar2 = [60,70,80];
+ar1.concat(ar2);
+
+indexOf
+=======
+let ar1 = [10,20,30,40,50,60,30,70,80,30,90,100];
+ar1.indexOf(30);  //2
+ar1.indexOf(30,3);  //6
+ar1.indexOf(30,ar1.indexOf(30)+1); // 6
+
+
+lastIndexOf
+===========
+let ar1 = [10,20,30,40,50,60,30,70,80,30,90,100];
+ar1.lastIndexOf(30);  //9
+
+
+includes
+========
+let courses = ['python','java','javascript','node','react'];
+courses.includes('java');
+
+'java' in courses
+
+
+find
+=====
+let ar1 = [10,20,30,40,50];
+
+let customers = [
+    {cid:1001,cname:'kumar'},
+    {cid:1002,cname:'suri'},
+    {cid:1003,cname:'hari'},
+]
+
+ar1.find(20)    //wrong
+
+ar1.find(function)
+
+customers.find((customer)=>customer.cid == 1002);
+
+customers.find((customer)=>customer.cname == 'suri');
+
+function findcust(customer){
+    if(customer.cname=='suri'){
+        return true;
+    }
+}
+
+customers.find(findcust);
+
+
+let ar1 = [10,20,30,40,50];
+function findValue(n){
+    if(n>30){
+        return true;
+    }
+};
+
+ar1.find(findValue);
+
+findLast
+=======
+let ar1 = [10,20,30,40,50,20,60,70,80];
+let customers = [
+    {cid:1001,cname:'kumar',course:'python'},
+    {cid:1002,cname:'suri',course:'django'},
+    {cid:1003,cname:'hari',course:'aws'},
+    {cid:1004,cname:'kiran',course:'react'},
+    {cid:1005,cname:'suri',course:'python'},
+    {cid:1006,cname:'swamy',course:'django'},
+]
+customers.findLast((customer)=>customer.cid == 1002);
+customers.findLast((customer)=>customer.cname == 'suri');
+function findcust(cr){
+    return cr.cid == 1004
+}
+function findcust(customer){
+    if(customer.cname=='suri'){
+        return true;
+    }
+}
+customers.findLast(findcust);
+
+function finddjstd(customer){
+    if (customer.course=='python'){
+        return true
+    }
+}
+
+let ar1 = [10,20,30,40,50,20,60,70,80];
+
+function findValue(n){
+    if(n<30){
+        return true;
+    }
+};
+
+ar1.findLast(findValue);
+
+========================================
+findIndex
+==========
+let ar1 = [10,20,30,40,50,30,60,70,80];
+
+ar1.findIndex((n)=>n==30)
+
+
+
+findLastIndex
+=============
+let ar1 = [10,20,30,40,50,30,60,70,80];
+
+ar1.findLastIndex((n)=>n==30)
+
+
+sort
+====
+let ar1 = [7,3,2,5,22,1];
+
+function f1(a,b){
+    if (a>b) return 1;
+    if (a==b) return 0;
+    if (a<b) return -1;
+}
+
+
+function f2(a,b){
+    return a - b;
+}
+
+
+ar1.sort(f1);
+ar1.sort(f2);
+ar1.sort((a,b)=> a - b);  // ascending
+ar1.sort((a,b)=> b - a);  // descending
+
+// Here it takes elements as strings
+
+
+Reverse
+======
+let ar1 = [1,2,3,4,5];
+let ar1 = [1,4,3,2,5];
+ar1.reverse();
+
+
+split
+=====
+let str1 = "1001,ravi,javascript,6000";
+
+let ar1 = str1.split(",");
+console.log(ar1);
+
+let str1 = "1001,ravi,javascript,6000";
+let ar2 = str1.split(",",2);
+console.log(ar2);
+
+
+join
+====
+let ar1 = [1,2,3,4,5];
+ar1.join("javascript");
+ar1.join("#");
+ar1.join(5);
+ar1.join(",");
+let customer = [101,'kumar','python',15000]
+cutomer.join(",")
+
+let ar2 = ['w','e','l','c','o','m','e'];
+ar2.join("");
+
+
+isArray
+======
+let obj1 = {1:100,2:200};
+let ar1 = [1,2,3,4,5];
+
+Array.isArray(obj1);  // false
+Array.isArray(ar1);   // true
+
+
+//Adding user defined function into local array as a Methods
+
+function f1(){
+    for(let i of this){
+        console.log(i+i)
+    }
+}
+
+Array.prototype.f1 = f1;
+
+ar1 = [1,2,3,4,5]
+
+ar1.f1();    // 2 4 6 8 10
+
+==========================================
+
+
+
+
+
+
+
+
+
+
+
+
+

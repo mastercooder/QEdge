@@ -1,0 +1,318 @@
+Conditional statements in javascript
+===================================
+if.....
+if....else.....
+if....else if....else if....else....(ladder if)
+if...if...if....else...else...else....(nested if)
+
+syntax:
+======
+if(comp/expr/value/var/obj/...) {
+    // code for true part
+} else {
+    ///code for false part
+}
+
+if(true/false) {
+    // code for true part
+} else {
+    //code for false part
+}
+
+notes:
+    else part of the if statement is optional
+
+examples:
+=========
+if (true){
+    console.log("Welcome");
+}
+
+if (true)
+    console.log("Welcome");
+
+if (true)
+    console.log("Welcome");
+    console.log("HI");
+
+if (false)
+    console.log("Welcome");
+    console.log("HI");
+
+if (false){
+    console.log("Welcome");
+    console.log("HI");
+}
+
+
+if (false){
+    console.log("Welcome");
+}
+
+if (false){
+    console.log("Welcome");
+} else {
+    console.log("Not Welcome");
+}
+
+var a = Number(prompt("Enter a value for a ="));
+var b = Number(prompt("Enter a value for b ="));
+if(a>b){
+    console.log("A is greater value "+a);
+} else {
+    console.log("B is greater value "+b)
+}
+
+
+var a = Number(prompt("Enter a value for a ="));
+var b = Number(prompt("Enter a value for b ="));
+if(a>b){
+    console.log("A is greater value "+a);
+} else if(b>a){
+    console.log("B is greater value "+b);
+} else {
+    console.log("Both are equal "+a+" and "+b);
+}
+
+//ladder if
+var proof = prompt("Enter a type of proof = ")
+if(proof==="aadhaar"){
+    console.log("Yes aadhaar is OK");
+} else if(proof==="voterid") {
+    console.log("Voter ID is ok");
+} else if (proof=="pancard") {
+    console.log("PAN is ok");
+} else {
+    console.log("Please Provide valid proof")
+}
+
+var age = Number(prompt("Enter your age = "));
+if (age>=18){
+    var name = prompt("Enter your name = ");
+    if (['ravi','kumar','ramu','somu','anil'].includes(name)) {
+        console.log("Yes Now you can caste your vote");
+    } else {
+        console.log("Your name not in Voter List");
+    }
+} else {
+    console.log("You are not eligible to cast vote");
+}
+
+note:
+    console.log(5 in [1,2,3,4,5,6]) ==> true
+    console.log(5 in [1,2,3,4,"5",6]) ==> true
+    console.log("5" in [1,2,3,4,"5",6]) ==> true
+    console.log("ram" in [1,2,3,4,"ram",6]) ==> undefined
+
+?
+===
+
+var a = 5>4 ? "welcome" : "Not welcome";
+console.log(a);
+
+
+var a = 5<4 ? "welcome" : "Not welcome";
+console.log(a);
+
+var a=10;
+var b=20;
+var result = a>b ? "a is bigger" : "b is bigger";
+
+var a=10;
+var b=20;
+var result = a<b ? "b is bigger" : "a is bigger";
+console.log(result);
+
+var a=10;
+var b=10;
+var result = a>b ? "a is bigger" : b>a ? "b is bigger" : "Both are equal";
+console.log(result);
+
+Nested if
+=========
+var s1 = Number(prompt("Enter subject s1 Marks"));
+var s2 = Number(prompt("Enter subject s2 Marks"));
+var s3 = Number(prompt("Enter subject s3 Marks"));
+if(s1>=40){
+  if(s2>40){
+    if(s3>=40){
+      console.log("PASS");
+    } else {
+      console.log("FAIL");
+    }
+  }
+}
+
+var s1 = Number(prompt("Enter subject s1 Marks"));
+var s2 = Number(prompt("Enter subject s2 Marks"));
+var s3 = Number(prompt("Enter subject s3 Marks"));
+if(s1>=40){
+  if(s2>40){
+    if(s3>=40){
+      console.log("PASS");
+    } else {
+      console.log("FAIL");
+    }
+  }
+} else {
+    console.log("FAIL")
+}
+
+
+var s1 = Number(prompt("Enter subject s1 Marks"));
+var s2 = Number(prompt("Enter subject s2 Marks"));
+var s3 = Number(prompt("Enter subject s3 Marks"));
+if(s1>=40){
+  if(s2>40){
+    if(s3>=40){
+      console.log("PASS");
+    } else {
+      console.log("FAIL");
+    }
+  } else {
+    console.log("FAIL")
+  }
+} else {
+    console.log("FAIL")
+}
+
+
+
+var s1 = Number(prompt("Enter subject s1 Marks"))
+var s2 = Number(prompt("Enter subject s2 Marks"))
+var s3 = Number(prompt("Enter subject s3 Marks"))
+var maxmarks=100;
+if(s1<=maxmarks && s2<=maxmarks && s3<=maxmarks){
+    if(s1>=40){
+      if(s2>40){
+        if(s3>=40){
+          console.log("Pass");
+        } else {
+          console.log("Fail");
+        }
+      }
+  }
+} else {
+  console.log("Invalid Marks");
+}
+
+
+switch:
+============================================
+It is replacement of multiple if statements
+
+Styntax:
+========
+switch(case){
+    case 1:
+        //code for case1
+        break;
+    case 2:
+        //code for case2
+        break
+    case 3:
+        //code for case3
+        break;
+    default:
+        //code for default case if above all cases not matched
+}
+Notes:
+    * Default case is optional not mandatory
+
+var proof = prompt("Enter Proof of your identity =")
+switch(proof){
+    case 'aadhaar':
+        console.log("Aadhaar is OK");
+        break;
+    case 'pan':
+        console.log("PanCard is OK");
+        break;
+    case 'voterid':
+        console.log("voterid is OK");
+        break;
+    default:
+        console.log("Please provide correct proof")
+}
+
+
+var proof = prompt("Enter Proof of your identity =")
+switch(proof){
+    case 'aadhaar':
+        console.log("Aadhaar is OK");
+    case 'pan':
+        console.log("PanCard is OK");
+    case 'voterid':
+        console.log("voterid is OK");
+    default:
+        console.log("Please provide correct proof")
+}
+
+var n = Number(prompt("Enter a number = "));  //  -100  123  0  'hi'
+switch(Math.sign(n)){
+    case (1):
+        console.log("Positive");
+        break;
+    case -1:
+        console.log("Negative");
+        break;
+    case (0):
+        console.log("Zero");
+        break;
+    default:
+        console.log("Please provide Number only");
+}
+
+var n = prompt("Enter a number = ");
+var n = n  || "Null";
+switch(Math.sign(n)){
+    case (1):
+        console.log("Positive");
+        break;
+    case -1:
+        console.log("Negative");
+        break;
+    case (0):
+        console.log("Zero");
+        break;
+    default:
+        console.log("Please provide Number only");
+}
+
+
+var n = Number(prompt("Enter a number = "));
+var n = n  || "Null";
+switch(Math.sign(n)){
+    case (10/10):
+        console.log("Positive");
+        break;
+    case (7-8+9-9):
+        console.log("Negative");
+        break;
+    case (0):
+        console.log("Zero");
+        break;
+    default:
+        console.log("Please provide Number only");
+}
+
+
+
+var subject = prompt("Enter Your subject Name = ");
+switch(subject){
+    case "maths":
+    case "physics":
+    case "chemistry":
+        console.log("Science Students");
+        break;
+    case "history":
+        console.log("Not a Science Student");
+        break;
+    default:
+        console.log("maths,physics,chemistry or history only");
+}
+
+
+
+
+
+

@@ -1,0 +1,41 @@
+how to write javascript file
+where to write
+    online editors
+    developer console
+variables
+datatypes
+operators
+type casting
+type conversion
+strings
+conditional statements
+switch
+loops
+stringMethods
+Array
+object
+functions
+array methods
+function call
+function apply
+function bind
+
+iterator
+generator
+decorator
+
+callbacks
+promise
+async/await
+
+
+class
+modules
+
+DOM manupulation
+browser object
+document object
+events
+
+cookies
+session

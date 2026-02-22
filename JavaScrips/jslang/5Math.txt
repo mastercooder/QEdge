@@ -1,0 +1,18 @@
+Math class
+==========
+Math.abs(-100) ==> 100
+Math.abs(100) ==> 100
+
+Math.ceil(3.000001) ==> 4
+Math.floor(3.9999) ==> 3
+
+Math.tan(45)  == > 1.xxxxx
+
+Math.pow(2,3) ==>  8
+Math.max(1,2,3,4,5,6) ==>  6
+Math.min(1,2,3,4,5,6) ==>  1
+
+Math.sign(-100) ==> -1
+Math.sign(100)  ==>  1
+Math.sign(0)    ==> 0
+

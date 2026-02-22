@@ -1,0 +1,84 @@
+Iterator:
+    It is an iterable object
+
+var ar1 = [10,20,30,40,50]
+
+console.log(ar1[0]);
+
+for(let i of ar1){
+    console.log(i);
+}
+
+creating iterator with array
+===========================
+var iterator_data = ar1.values()
+console.log(iterator_data.next());
+console.log(iterator_data.next());
+console.log(iterator_data.next());
+console.log(iterator_data.next());
+console.log(iterator_data.next());
+console.log(iterator_data.next());
+
+Note:
+1. output of next method is object
+2. this object has two keys known as value and done
+
+var data = ar1.values();
+data.next().value;   // 10
+data.next().done ;  // false
+
+
+var ar2 = ['python','javascript','java','react','nextjs'];
+
+var courses = ar2.values();
+
+for(let course of courses){
+    console.log(course);
+};
+
+
+Generator:
+=========
+function* f1(){
+    for(let i of [10,20,30,40,50]){
+        yield i;
+    }
+}
+
+var gen_data = f1();
+gen_data.next();
+gen_data.next();
+gen_data.next().value;
+
+function* f2(){
+    yield 10;
+    yield 20;
+    yield 30;
+    return 100;
+}
+
+var gen1 = f2();
+for(let i of gen1){
+    console.log(i);
+}
+
+function *f3(){
+    return 100;
+}
+
+var gen1 = f3();
+gen1.next();
+gen1.next();
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,517 @@
+What is Function?
+
+function is a named code.
+function is a callable named code.
+function is a reusable object of callable named code.
+
+syntax: to create function
+==========================
+function <fname>(parameters){
+    statement1;
+    statement2;
+    statement3;
+    return <value/var/expr/object/....>;
+}
+syntax : to call above function
+<fname>(arguments);
+
+syntax2: to create function with mandatory syntax
+=================================================
+function <fname>(){
+    statement1;
+}
+
+syntax2: to call a function
+<fname>();
+
+
+functon syntax Notes:
+1. parameters are not mandatory
+2. return statement is not mandatory
+3. in function body at least one statement required
+4. at the time of calling function arguments are optional
+5. return statement should be last statement because after
+   execution of return it will come out from function body
+6. when we call function function body will execute. 
+
+example1:
+========
+function f1(){
+    console.log("welcome to javascript");
+}
+
+f1()  //  welcome to javascript
+
+function f2(){
+    return "good morning";
+}
+
+f2();
+
+notes:
+1. function must return
+2. function returns with return statement only
+3. function returns undefined which doesn't have return statement
+4. if you assign function execution to a variable it gets return value
+
+var v1 = f1() 
+console.log(v1)  //  undefined
+
+var v2 = f2();
+console.log(v2);   //  "good morning" as return value
+
+// asssigning function reference to a variable 
+
+var v3 = f1;
+
+typeof f1  //  function
+typeof v3  // function
+f1() // "welcome to javascript"
+v3() // "welcome to javascript"
+
+//  understanding of parameters and arguments
+
+function f1(msg){
+    return msg
+}
+
+f1("Good Morning");   //  Good Morning
+
+function f2(a,b){
+    return a+b;
+}
+
+f1(10,20,30,40,50)
+
+function f2(a,b){
+    console.log(arguments);
+    return a+b;
+}
+
+f1(10,20,30,40,50)
+
+Notes:
+1. It is not mandatory in Java Script that is number of arguments equal to number of parameters
+2. All passing arguments will store in arguments Iterator object in side function only
+
+// variables in function
+var v1 = 100;  // global variable
+function f1(){
+    console.log(v1);
+}
+f1();  // 100
+
+var v1 = 100;  // global variable
+function f1(){
+    var v1 = 111;
+    console.log(v1);
+}
+f1();  // 111  (first local then global)
+v1; //100
+
+
+var v1 = 111;
+function f1(){
+    var v1 = 222;
+    return v1;
+}
+f1();  // 222 
+v1;  //111
+
+
+var a = 1000
+function f1(){
+    var a = 100
+    function f2(){
+        var a = 10;
+        return a;
+    }
+    return f2();
+}
+
+f1();  //  10
+
+
+var a = 1000
+function f1(){
+    var a = 100
+    function f2(){
+        return a;
+    }
+    return f2();
+}
+
+f1(); 
+
+var a = 1000
+function f1(){
+    function f2(){
+        return a;
+    }
+    return f2();
+}
+
+f1(); 
+
+// positional arguments and keyword arguments
+
+function f1(a,b){
+    console.log("a = "+a);
+    console.log("b = "+b);
+    return a+b;
+}
+
+f1(10,20);   // positional arguments
+
+function f1(a,b){
+    console.log("a = "+a);
+    console.log("b = "+b);
+    return a+b;
+}
+
+f1(b=11,a=22);
+f1(c=111,a=222);
+
+notes:
+==> in javascript there is no concept of keyword arguments
+==> in javascript only we have positional arguments
+
+function expression
+==================
+var f1 = function(){
+    return "Good morning";
+}
+
+typeof f1;   // function
+f1();    // "Good Morning"
+
+// self execution
+
+(
+    function(){
+        return "welcome";
+    }
+)();
+
+function f1()
+    return "good Morning";
+
+f1();
+
+function f1(msg="Good Morning"){
+    return msg;
+}
+f1();    // Good Morning
+f1("Good Evening");   //Good Evening ==>
+
+notes:
+msg="Good Morning" ==> this is called default arguments
+
+
+function f1(a,b=20){
+    return a+b;
+}
+
+f1(100)  // 120
+
+function f1(a=20,b){
+    return a+b;
+}
+
+f1(100)  // NaN
+
+Notes:
+1. at the time of creating parameters in function if at all
+   any default arugument for a parameter that should be 
+   last parameter
+2. order of parameters 
+    * first arguments next default arguments
+
+
+function f1({a=10,b}){
+    return a+b
+}
+
+f1(b=20)
+f1({b:20})
+
+
+
+//Arrow function 
+    name less functions
+    annomous functions
+
+
+syntax:
+
+(parameters) => returnStatement;
+
+
+let f1 = () => "good morning"
+f1();
+
+function add(a,b){
+    return a+b;
+}
+add(10,20)
+
+let add = function(a,b){
+    return a+b;
+}
+add(10,20)
+
+let add = (a,b) => a+b;
+add(10,20);
+
+(
+    function(a,b){
+        return a+b;
+    }
+)(10,20);
+
+(
+    function f1(a,b){
+        return a+b;
+    }
+)(10,20);
+
+(
+    (a,b) => a+b
+)(10,20);
+
+let f1 = a => a*a;
+f1(4);
+
+// multiple arrow functions
+
+let msg = true ? "Hello" : "bye";
+console.log(msg);
+
+let msg = false ? "Hello" : "bye";
+console.log(msg);
+
+let age = Number(prompt("Enter your Age ?"));
+age>18 ?
+    console.log("You Can cast your vote") :
+    console.log("Sorry You can not cast vote")
+
+var age = Number(prompt("Enter your Age ?"));
+var vote = age>18 ?
+    () => console.log("You Can cast your vote") :
+    () => console.log("Sorry You can not cast vote")
+
+//multi line arrow function
+let sum = (a,b) => {
+    let s = a+b;
+    return s
+}
+sum(100,200);
+
+
+// recursion function
+
+5 ==>  5*4*3*2*1
+
+function fact(n){
+    if (n===1){
+        return 1;
+    } else {
+        return n*fact(n-1);
+    }
+}
+
+fact(5)
+
+//fib
+//  0 1 1 2 3 5 8 13 21
+
+function fib(n){
+    var x = '';
+    [a , b] = [0 , 1]
+    while (a<n){
+        x = x + a +' ';
+        [a,b] = [b,a+b]
+    }
+    console.log("");
+    return x;
+}
+
+fib(20)
+
+
+// rest parameters and spread syntax
+
+function f1(a,b){
+    return a+b
+}
+f1(1,2)
+
+function max(...values){
+    return values;
+}
+
+max(1,2,3)
+max(3,4,3,2,1,5)
+
+function max(...values){
+    if (values.length === 0){
+        return -Infinity;
+    }
+    let mx = values[0]
+    for (let i of values){
+        if (i>mx){
+            mx = i
+        }
+    }
+    return mx;
+}
+max(1,2,3,4,5,6)
+max(1,2,3,4,5,6,7,8)
+max(1,2,3)
+
+// spread syntax
+function f1(a,b){
+    return a+b;
+}
+
+f1(10,20);
+f1(10,20,30,40);
+let ar1  = [111,222]
+f1(ar1) ==> wrong
+f1(...ar1) ==> 333
+
+let ar1 = [1,2,3,4,5]
+let ar2 = [6,7,8,9,10]
+max(...ar1)
+max(...ar1,...ar2)
+max(123,...ar1,...ar2,434)
+max(..."welcome")
+
+
+// Nested functions
+
+function f1(){
+    function f2(){
+        return "Good Morning ";
+    }
+    return f2();
+}
+
+f1()
+f2()
+
+function f1(name){
+    function f2(){
+        return "Good Morning "+name;
+    }
+    return f2();
+}
+
+f1('Ravi')   // Good Morning Ravi
+
+function f1(){
+    function f2(name){
+        return "Good Morning "+name;
+    }
+    return f2();
+}
+
+f1('Ravi')   // Good Morning
+
+
+//closure function
+// if any function returns another function reference that is
+   called closure function
+
+function f1(){
+    function f2(){
+        return "Good Morning ";
+    }
+    return f2;
+}
+
+f1();   // it returns f2 function reference
+
+var f3 = f1() //
+f3(); //  "Good Moring"
+
+function f1(msg){
+    function f2(name){
+        return msg +" "+name;
+    }
+    return f2;
+}
+
+f1("Good Morning");   // it returns f2 reference
+var gm = f1("Good Morning");
+gm("Ravi")
+
+var ge = f1("Good Evening");
+ge("Ravi")
+
+function discount(d){
+    function sales(p){
+        return p - (p/100*d);
+    }
+    return sales;
+}
+
+var daily_sales = discount(10);
+daily_sales(1000); // 900
+var weekly_sales = discount(20);
+weekly_sales(1000); // 800
+
+// function with new keyword
+
+var <Fname> = new Function([parameters],funcationBody);
+
+let f1 = new Function('a','b','return a+b')
+
+f1(10,20)
+
+let f1 = new Function('console.log("welcome to javascript")');
+
+f1()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

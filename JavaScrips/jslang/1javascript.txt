@@ -1,0 +1,540 @@
+What is JavaScript?
+    JavaScript was initially developed for browser and to make web pages alive.
+    what ever code written these are called scripts.
+    these script written in HTML page with script element
+    It will run automatically by browser as and when your project loads in browser
+    Initially it has a name called LiveScript.
+    LiveScript name has been changed to JavaScript when java was popular
+    JavaScript became very popular and independent language with its own specifications  of ECMAScript.
+    ECMAScript stands for European Computer Manfacturer Association
+
+    Now JavaScript can execute not only in Browser as well as in server side also
+
+    Browser has JavaScript Engine/JavaScript Virtual Machine which is responsible for
+                1. compile and convert into machine code
+    
+    Every browser embeded with a JavaScript Engine
+        1. v8   ===>  Chrome, Edge and Opera
+        2. chakra ==> IE
+        3. spider monkeys = firefox
+        4. squirrelFish ==> safari
+
+    How engine execute code:
+    ========================
+        1. Engines parse the code which is written in english
+        2. It compile the code into machine code
+        3. machine code will execute very fast
+    
+    what javascript can do in Browser?
+        1. It can create HTML elements like
+                <h1>welcome to JavaScript</h1>
+        2. It will respond to user actions in browser like , click, mouser hover...
+        3. It will send request to server over network.
+        4. download and upload file in browser with the help of AJAX and COMET technologies
+        5. DOM manipulation and CSS implementation
+        6. Get and set cookies
+        7. Remembering the data on the client-side of local storage.
+
+    what javascript can not do in Browser?
+        1. it can  not read write files in hard disk (drives)
+	2. it can not communicate with rdbms(oracle,postgresql)
+
+    ==> javascript is fully integrated with HTML/CSS
+    ==> supported by all major browsers
+    ==> develops applications as light weight 
+
+    where we can write java script(Code Editors):
+            1. developer tool in browser
+            2. online Editors
+                    code pen
+                    jsbin
+            3. IDE's
+                    vscode
+                    sublimetext
+                    atom
+                    Eclipse
+            4. .js file
+
+javascript Content
+==================
+variable
+operator
+datatype
+user interactions
+type casting
+type conversion
+statements in js
+symbols
+conditinal statements
+loops
+strings
+arrray
+object
+functions
+array methods
+string methods
+
+
+Variables
+=========
+In javascript variable creation has two parts
+1. variable declaration : 
+    var a;
+2. variable definition
+    a = 10;
+
+Note: declaration and definition can be written in single line
+    var a = 10; 
+
+Declaration of variable in javascript with 3 key words
+1. var
+2. let
+3. const
+
+declaration
+    var a;  ==> it is old style and scope is global
+    let a; ==> new style and scope is block level
+    const A; ==> It is constant which means variable will not accept any kind of assignment that means once variable is created it will not be
+    modified.
+
+
+Example
+======
+    var a = 100;
+    {
+        console.log(a);  // 100
+    }
+    console.log(a); // 100
+
+    var a = 111;
+    {
+        var a = 222;
+        console.log(a);  // 222
+    }
+    console.log(a);   // 222
+
+    var a = 333;
+    {
+        let a = 444;
+        console.log(a);    // 444
+    }
+    console.log(a);   // 333
+
+let a = 222;
+{
+    console.log(a);  // 222
+}
+console.log(a);  // 222
+
+
+let a = 333;
+{
+    let a = 444;
+    console.log(a);   /// 444
+}
+console.log(a);  // 333
+
+
+var a = 333;
+{
+    let a = 444;
+    console.log(a);   /// 444
+}
+console.log(a);  // 333
+
+
+
+constant = const
+================
+* const variable name as per standard Capital characters
+
+    const AADHAAR = 9847359776867;
+    AADHAAR = 947593459;   //Not possible
+
+EXAMPLES
+    let name = 'kumar';
+    let course = 'python';
+    let fee = 10000;
+    console.log(name);
+    console.log(course);
+    console.log(fee);
+
+    let name = 'Kumar',course='python',fee=10000;
+    console.log(name);
+    console.log(course);
+    console.log(fee);
+
+
+    let name = 'kumar',
+        course='python',
+        fee = 10000;
+    console.log(name);
+    console.log(course);
+    console.log(fee);
+
+
+    let name = 'kumar'
+        ,course = 'python'
+        ,fee = 10000;
+    console.log(name);
+    console.log(course);
+    console.log(fee);
+
+
+Naming conversion of variable:
+=============================
+* variable names follows camelCase .
+        studentName
+        productKey
+        veeraVenkataVarma
+        student name ==> wrong
+        student_name
+        student-Name   // wrong
+
+* variable name should not start with number
+    1a = 10 => wrong
+    a1 = 10 
+    $a = 10
+    @a = 10 ==> wrong
+    a@ = 10 ==> wrong
+    _a = 10 
+    __a = 10
+    _ = 10
+    $ = 10
+    _ + $ ===> 20
+    user-name = 'ravi'  ==> wrong
+    user_name = 'ravi'
+    var let = 10
+    let var = 10 wrong
+    const var = 100; wrong
+    const let = 1111; wrong
+    var const = 1111; wrong
+
+Datatypes
+    1. number ==> all numerics including decimals
+        -3,-2,-1,0,1,2,3,...
+        10.45,10.65,1.0
+        NaN , Inifinity
+
+    2. String ===> any data inside single quotes or double quotes
+        var x = '100'
+        var x = 'welcome'
+        var x = "welcome"
+        var x = `welcome`
+
+    3. boolean ==> true or false
+        var x = true
+        var x = false 
+    4. undefined ==> Not defined value
+        var x;
+    5. Bigint ==> any number with suffix "n"
+        var n = 1000n
+    6. null ==> unknown value
+        var x = null;
+        typeof x  // Object
+
+* in strict mode of javascript you must declare variable
+
+'use strict'
+let a; //declaration mandatory in strict mode
+a=10000; //definitioon
+console.log(a)
+
+'use strict'
+let a = 444; //declaration mandatory in strict mode
+console.log(a)
+
+User Interactions in javascript:
+===============================
+1. alert    2. prompt   3. confirm
+
+alert("Login succeeded");
+alert ( "User name and password is wrong")
+
+prompt();
+prompt("Enter user Name =")
+var x = prompt("Enter something =")
+console.log(x)
+typeof x;
+
+Notes: 
+    prompt ok button will take existing value or default value
+    prompt cancel button will take null value
+
+Note: prompt box data is string data 
+
+confirm("Are you coming to class ? ")
+var x = confirm("Are you coming to class ? ")
+var x = confirm("Are you coming to class ? ",18)
+
+
+
+
+Type casting
+============
+var city = "hyderabad"
+console.log('welcome to ${city}');
+console.log("welcome to ${city}");
+console.log(`welcome to ${city}`);
+console.log(`welcome to ${"Chennai"}`);
+a=10
+b=20
+console.log(`welcome to ${a+b}`);
+console.log(`welcome to ${100+200}`);
+
+type conversion
+================
+var a = 10;
+typeof a; ==> number
+String(a) ==> '10'
+Boolean(a) ==> true
+
+var b = 'hi';
+Number(b);  // ==> NaN
+
+var b = '100'
+Number(b) ==> 1000
+var c = +b
+console.log(5+ +b);
+console.log(5++b);(wrong)
+console.log(5+ ++b);
+
+var b = '10.45'
+Number(b); ==> 10.45
+console.log(+b);
+
+
+Operators
+=========
+    1. Arthematic Operators :=> + , - , * , **, / ,%
+    console.log(10+10);
+    console.log('Hello'+' Raju');
+    console.log(10+'10');
+    console.log(10.45+10.45);
+    console.log(10-5);
+    console.log(2*3);
+    console.log(2**3);
+    console.log(2**3);
+    console.log(17/3);
+    console.log(17%3);
+    console.log(4**(1/2));
+    console.log(8**(1/3));
+
+Negation of value
+=================
+    var x = 5
+    console.log(-x);  // ==> -5
+    var x = 5
+    var y = 8
+    console.log(y-x); // ==> 3
+    console.log(y - -x);  // ==> 13
+
+Number conversion with +
+
+    var x = '10';
+    typeof x => string
+    typeof +x ==> number
+    console.log(10+'10'); ==> '1010'
+    console.log(10+ +'10') ==> 20
+    console.log(10+10+'10') ==> 2010
+    console.log(10+10+ +'10'); ==> '30'
+    console.log('5'+10+10); ==> '51010'
+    console.log(+'5'+10+10); ==> 25
+
+    let a = 5;
+    let b = 6;
+    let c = 10 - (a = b - 4);
+    console.log(c); //==> 8
+    console.log(a); // ==> 2
+
+    let x,y;
+    x = y = 2 + 4;
+    console.log(x);  //==> 6
+    console.log(y);  //==> 6
+
+    #modify-in place
+    let x = 10;
+    x+=4;  //==>  x = x + 4
+    console.log(x); //==> 14
+
+    let x = 10;
+    x*=4;   // x = x * 4
+    console.log(x); //==> 40
+
+
+Increment and decrement
+=======================
+    let  x = 2
+    let y = ++x   ==> step1:x=x+1, step2:y=x
+    console.log(x);  ==>3
+    console.log(y);  ==>3
+
+    let  x = 2
+    let y = x++    ==> step1:y=x , step2:x=x+1
+    console.log(x);  ==>3
+    console.log(y);  ==>2
+
+    let x = 2;
+    console.log(2 * x++) ==> 4
+
+    let x = 2;  
+    console.log(2 * x++) ==> 4
+
+    let x = (2+3,5+6)
+    console.log(x) ==> 11
+
+    let x = 1,2,3,4,5
+    console.log(x) ==> 1
+
+    let x = (1,2,3,4,5)
+    console.log(x) ==> 5
+
+comparision operator
+===================
+>,>=,<,<=,==,===,!=,!==
+
+console.log(10>5);  // true
+console.log(5>=5); // true
+console.log(5<6);  // false
+console.log(6<=6); // true
+console.log(5==6); // false 
+console.log(5==5); // true
+console.log(5=='5'); // true
+console.log(5==='5'); // false
+console.log(5!='5'); // false
+console.log(5!=='5'); // true
+console.log('a'>'b');
+console.log('a'<'b');
+console.log('abc'>'abd');
+console.log('1'<'2');
+console.log('1a'<'2a');
+console.log('1'<'a'); true
+console.log(99<'a'); true
+console.log(true==1); true
+console.log(true==2);
+console.log(true==Boolean(2));
+console.log(false==2);
+console.log(false==2);
+console.log(true==='0');
+console.log(false==0); true
+console.log(''==false); true
+console.log(''===false); 
+console.log(false===0);
+console.log(null==undefined); true
+console.log(null===undefined); false
+console.log(null>0); false
+console.log(null>=0); true
+console.log(null==0); false
+console.log(undefined>0); false
+console.log(undefined>=0); false
+console.log(undefined==0); false
+
+logical Operators
+=================
+and ==> &&
+or  ==> ||
+
+true && true ==> true
+true && false ==> false
+false && true ==> false
+false && false ==> false
+
+true || true ==> true
+true || false ==> true
+false || true ==> true
+false || false ==> false
+
+console.log(5>6 || 7<8); true
+console.log(5>6 || 7>8); false
+
+console.log(5>6 && 7>8); false
+console.log(5<6 && 7<8); true
+console.log(1 && 4); 4
+console.log(0 && 4); 0
+console.log(0 || 4); 4
+console.log(4 || 0); 4
+a = 0 || 4
+console.log(a); ==> 4
+//======================================
+
+Nullish ??
+===========
+
+var a = null;
+var b = a ?? 10
+console.log(b); //==> 10
+
+var a = 5;
+var b = a ?? 10
+console.log(b); //==> 5
+
+var a = undefined;
+var a;
+var b = a ?? 10
+console.log(b); //==> 10
+
+var a = NaN;
+var b = a ?? 100
+console.log(b);
+
+var a = 0;
+var b = a ?? 100
+console.log(b); // 0
+
+var a = true;
+var b = a ?? 100
+console.log(b); // true
+
+var a = false;
+var b = a ?? 100
+console.log(b);  //false
+
+var username;
+var login_user = username ?? "Guest User"
+console.log(login_user);
+
+var username = prompt("Enter User Name ="); //==> click cancel button
+var login_user = username ?? "Guest User"
+console.log(login_user);
+
+var username = prompt("Enter User Name ="); //==> click ok button
+var login_user = username ?? "Guest User"
+console.log(login_user);    // no output
+
+Notes:
+    OK with "Admin" ==> Admin(default value) will store in username
+    Cancel  ==>  Guest User will store in username
+    Ok without user name ==>  "TaTa" will store in username variable
+
+var first_name = null;
+var last_name = null;
+var username = first_name ?? last_name ?? "Kumar varma"
+console.log(username);    //==>  Kumar varma 
+
+var first_name = "Raju";
+var last_name = null;
+var username = first_name || last_name || "Kumar varma"
+console.log(username);  //==>  Raju
+
+var first_name = null;
+var last_name = "Suresh";
+var username = first_name || last_name || "Kumar varma"
+console.log(username);   //==>  Suresh
+
+Notes 
+    ||  ==> first Truth value will store 
+    ??  ==> first defined value will store
+
+var a = 0;
+console.log(a || 100);   //==> 100  
+console.log(a ?? 100);   //==> 0
+
+
+
+
+
+
+
+
+
+

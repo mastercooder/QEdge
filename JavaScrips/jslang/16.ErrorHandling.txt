@@ -1,0 +1,284 @@
+Error Handling in javascript
+===========================
+syntax
+==========
+try{
+    error code;
+} catch(errors){
+    code execute when error is catched;
+}
+
+var a = 1000;
+console.log(a);  //  1000
+
+console.log(b);  //  
+
+var a = 1000;
+console.log(a)
+try{
+    console.log(b);
+} catch(ReferenceError){
+    console.log("B is not Definied");
+}
+console.log("good Morning")
+
+var a = 1000;
+console.log(a);
+try{
+    console.log(b);
+} catch(err){
+    console.log("B is not Definied");
+}
+console.log(a);
+
+
+var a = 1000;
+try{
+    console.log(b);
+} catch(error){
+    console.log("B is not Definied");
+}
+
+try{
+    setTimeout(()=>console.log("Hi"),4000);
+} catch(err){
+    console.log("Given function is not defined");
+}
+
+try{
+    setTimeout(f1,4000);
+} catch(err){
+    console.log("Given function is not defined");
+}
+
+
+console.log(a);
+try{
+    console.log(b);
+} catch (err) {
+    console.log(err);
+    console.log("Hey there is no B");
+}
+console.log(a);
+
+
+
+var a = 111;
+setTimeout(function(){
+    try{
+        console.log(a);
+    } catch{
+        console.log("There is no variable like B");
+    }
+},4000)
+
+
+
+var a = 111;
+setTimeout(function(){
+    try{
+        console.log(b);
+    } catch{
+        console.log("There is no variable like B");
+    }
+},4000)
+
+
+try{
+    console.log(b);
+} catch(err){
+    console.log(err.name);
+    console.log(err.message);
+    console.log(err.stack);
+}
+
+
+function f1(){
+    try{
+        console.log(b);
+    } catch(err) {
+        console.log(err.name);
+        console.log(err.message);
+        console.log(err.stack);
+    }
+}
+
+function f1(){
+    console.log(b);
+}
+f1();
+
+function f2(fun){
+    fun();
+}
+f2(f1);
+
+//Throw operator ==> It generates an Error
+syntax
+======
+throw <errorobject>
+
+let err1 = new Error("Sample Error");
+let err2 = SyntaxError("Please Check Your syntax");
+let err3 = ReferenceError("Please check variables ");
+
+console.log(err1.name);
+console.log(err1.message);
+
+
+let student = {'name':'kumar','course':'javascript','fee':5000}
+
+try{
+    let stdinfo = JSON.parse(student);
+    if(stdinfo.name){
+        throw new SyntaxError("Data object is not created");
+    }
+    console.log(err.name);
+} catch(err){
+    console.log("JSON Error "+err.message);
+}
+
+
+let student = {'name':'kumar','course':'javascript','fee':5000}
+
+let jsonobj = JSON.stringify(student)
+let stdinfo = JSON.parse(jsonobj);
+let jsonobj = JSON.parse(student)
+
+var student = {'name':'kumar','course':'javascript','fee':5000}
+try{
+    let stdinfo = JSON.parse(student);
+} catch (err) {
+    if(err instanceof SyntaxError){
+        console.log("JSON Error "+err.message)
+    } else {
+        throw err;
+    }
+}
+
+
+
+let err1 = new Error("Course Not Found");
+
+let courses = ['python','java','javascript','nodejs'];
+
+let courseNotFound = new Error("Given course not Existed")
+let InvalidCourseFee = new Error("Course Fee More than actual fee");
+
+var course = prompt("Enter the course name :")
+courses.includes(course)
+
+
+let courses = ['python','java','javascript','nodejs'];
+let courseNotFound = new Error("Given course not Existed")
+var course = prompt("Enter Course Name =")
+if(!courses.includes(course)){
+    throw courseNotFound
+}
+
+
+var courses = ['python','java','javascript','sql','spring']
+
+let InvalidCourse = new Error("Given course is not existed");
+let InvalidCourseFee = new Error("Course fee is more than actual fee");
+
+var course = prompt("Enter Course Name")
+if(courses.includes(course)){
+    console.log(`Thanks for joining ${course} course`);
+} else {
+    throw InvalidCourse
+}
+
+
+
+// try .... catch (error) .... finally
+
+try{
+    // error code
+} catch(error) {
+    // catch code for raised errors
+} finally {
+    // Every time it will execute
+}
+
+var a = 100;
+try{
+    console.log(b);
+} catch(err){
+    console.log(err.message);
+} finally {
+    console.log("Thanks")
+}
+
+var a = 100;
+try{
+    console.log(a);
+} catch(err){
+    console.log(err.message);
+} finally {
+    console.log("Thanks")
+}
+
+
+
+Assignment1
+============
+
+let courses = {'python':5000,'java':6000,'js':4000,'node':3000}
+let students = {
+    101:['ravi','python',6000],
+}
+
+
+1. form has to ask student information for course registration
+    let sname = prompt('')
+    let cname = prompt('')
+    let fee = prompt('')
+    if (cname in courses) {
+        students[102]:[sname,cname,fee]
+    } else {
+        throw InvalidCourse
+    }
+2. store student data into students object
+3. check course is valid or not
+4. course fee should not more than actual fee
+5. due fee to be mentioned 
+
+
+let courses = {'python':5000,'java':6000,'js':4000,'node':3000}
+let students = {
+    101:['ravi','python',6000],
+}
+
+let courseNotFound = new Error("Given course not Existed")
+let InvalidCourseFee = new Error("Course Fee More than actual fee");
+
+var sname = prompt("Enter Student Name :")
+var course = prompt("Enter Student Course :")
+var fee = Number(prompt("Enter Student Fee :"))
+
+if(course in courses){
+    if(fee > courses[course]){
+        throw InvalidCourseFee
+    } else {
+        students[102] = [sname,course,fee]
+    }
+} else {
+    throw courseNotFound
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,102 @@
+//Date it is used to create Dates
+
+let date1 = new Date();
+console.log(date1);   // current date and time
+
+let date2 = new Date(1000);
+console.log(date2);   // adding 1000 ms to 1970-jan-01 5:30:01
+
+let date2 = new Date(1000*60*60*24*365);   // adding 1 year to javascript date
+console.log(date2)
+
+let date2 = new Date(0);    // 1970-jan-1 5 30
+console.log(date2)
+
+let date2 = new Date('2023-12-20');   // creating date object with specific date
+console.log(date2)
+
+let date2 = new Date('2023-12-28');
+console.log(date2)
+
+
+//10 days back date
+console.log(new Date(new Date()-(1000*3600*24*10)));
+
+//10 days future date
+let today = new Date();
+new Date(today.setDate(today.getDate() + 10));
+
+// Before 1970
+let x = new Date(-3600*24*1000)
+console.log(x);
+
+syntax:
+new Date(year month  day hour min second ms)
+Month Number
+============
+0-jan
+1-feb
+2-march
+
+
+let date1 = new Date(2023,10(Nov),23,10,43,44,657);
+console.log(date1);
+
+
+methods 
+=======
+let today = new Date();
+console.log(today);
+
+let today = new Date();
+console.log(today.getDate());
+console.log(today.getDay());
+console.log(today.getFullYear());
+console.log(today.getHours());
+console.log(today.getMonth());
+console.log(today.getYear());
+
+
+//watch development
+
+let tid;
+let running = true;
+function update(){
+    s = new Date().getSeconds(), 
+    m = new Date().getMinutes(), 
+    h = new Date().getHours(); 
+    s++;
+    if (s>60){
+        s=1;
+        m++;
+        if (m>60){
+            m = 1;
+            h++;
+        }
+    }
+    console.log(h+":"+m+":"+s);
+}
+
+function startStopWatch(){
+    if (running===false) {
+        clearInterval(tid);
+    } else {
+        tid = setInterval(update,1000);
+    }
+    running = !running;
+}
+
+function reset(){
+    s = new Date().getSeconds();
+    m = new Date().getMinutes(); 
+    h = new Date().getHours(); 
+    tid;
+    running = false;
+    clearInterval(tid);
+    console.clear();
+    console.log(h+":"+m+":"+s);
+    running = true
+}
+
+
+
