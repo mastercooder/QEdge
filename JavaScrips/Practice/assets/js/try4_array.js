@@ -36,3 +36,27 @@ if(result){
     element3Value.innerHTML = 'false';
 }
 
+
+
+// Filter
+
+let element4Value = document.querySelector('.element4');
+
+let ar4 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 22, 33, 44, 100, 500];
+let result4 = ar4.filter((n) => (n%2==0));
+
+element4Value.innerHTML = `Numbers Are: ${result4.join(', ')}`;
+
+
+// Sort
+
+let element5Value = document.querySelector('.element5');
+let ar5 = [6, 23, 5, 12, 523, 56, 6, 3, 1, 7, 63, 2, 34];
+function asSort(a, b){
+    return b - a;
+}
+
+let result5 = ar5.sort(asSort);
+
+element5Value.innerHTML = result5;
+
