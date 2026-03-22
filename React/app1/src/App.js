@@ -1,6 +1,8 @@
-import logo from './logo.svg';
-import './App.css';
-import Comp1 from './comp1';
+import "./App.css";
+import Comp1 from "./Practice/Comp1";
+import Comp2 from "./Practice/Comp2";
+import Counter from "./Practice/Counter";
+import PasArgToEvent from "./Practice/PasArgToEvent";
 
 function App() {
   return (
@@ -8,10 +10,17 @@ function App() {
       <header className="App-header">
         <h3>React Application</h3>
       </header>
-      <h3>Welcome</h3>
-      <Comp1></Comp1>
+      <div className="div_1">
+        <h3 className="app_h3">App.js</h3>
+        <Comp1 className="Comp1"></Comp1>
+        <Comp2 className="Comp2"></Comp2>
+      </div>
+      <div className="div_2">
+        <Counter className="Counter"></Counter>
+        <PasArgToEvent className="PasArg"></PasArgToEvent>
+      </div>
     </div>
   );
 }
 
- export default Comp1; // ---> use this or || export default || before funtion.
+export default App; // ---> use this or || export default || before funtion.
