@@ -1,0 +1,510 @@
+DML: Data Manipulation language:
+================================
+INSERT , UPDATE , DELETE , MERGE , INSERT ALL
+
+1. INSERT:
+==========
+	It is used to insert new records into existing table.
+
+syntax:
+=======
+insert into <tablename> values(input to the table according to structure of the table);
+
+student
+=======
+sid 		number(4)
+sname 		varchar2(15)
+course		varchar2(15)
+
+drop table student purge;
+
+create table student
+(
+sid number(4),
+sname varchar2(15),
+course varchar2(15)
+);
+
+
+to see the structure of the table:
+=================================
+sql>describe student
+	(or)
+sql>desc student
+
+student
+=======
+sid 		number(4)
+sname 		varchar2(15)
+course		varchar2(15)
+
+Example:
+========
+insert into student values(101,'scott','oracle');
+
+Note:
+=====
+for varchar2,char,date datatypes we have to provide input with in single quotes at time of inserting.
+
+inserting data for specific columns:
+=============================
+insert into student values(102,'smith'); (wrong usage)
+
+
+insert into student(sid,sname) values(102,'smith');
+
+Note:
+=====
+*Above statement will insert null value for course column.
+*This is known as inserting null values by system implicitly.
+
+sql>commit;
+
+inserting null values by the user:
+==================================
+insert into student values(null,'null','null');=> (wrong insertion for nulls)
+
+Note: Null is keyword which represents null value
+
+if we keep single quotes then it become like string
+
+sql>rollback;
+
+insert into student values(null,null,null);(correct)
+
+note:
+=====
+This is known as inserting null values by the user explicitly
+
+insert into student values(104,'mike','unix');
+
+commit;
+
+===========================================
+inserting data at runtime of sql statement:
+===========================================
+insert into student values(&sid,'&sname','&course');
+
+Enter a value for sid 	: 105
+Enter a value for sname 	: miller
+Enter a value for course	: oracle
+
+old:insert into student values(&sid,'&sname','&course');
+new:insert into student values(105,'miller','oracle');
+
+1 row created.
+
+Providing null value at run time
+==========================
+
+commit;
+
+insert into student values(&sid,'&sname','&course');
+
+Enter a value for sid 	: null
+Enter a value for sname : null
+Enter a value for course: null
+
+old:insert into student values(&sid,'&sname','&course');
+new:insert into student values(null,'null','null');
+
+Note:
+=====
+*At the time prividing null values at runtime press enter button for single quotes values.
+
+
+sql>insert into student values(&sid,'&sname','&course');
+
+Enter a value for sid 	: null
+Enter a value for sname : (press enter)
+Enter a value for course: (press enter)
+
+old:insert into student values(&sid,'&sname','&course');
+new:insert into student values(null,'','');
+
+insert into student values(108,'james','java');
+
+select * from student;
+
+inserting data from one table to another table:
+============================================
+drop table emp1;
+drop table emp2;
+
+create table emp1 as select * from emp;
+
+create table emp2 as select * from emp where 1=2;
+
+emp1==>empno,ename,job,mgr,hiredate,sal,comm,deptno
+emp2==>empno,ename,job,mgr,hiredate,sal,comm,deptno
+
+insert into emp2 select * from emp1;
+
+Note:
+for above statement both the tables structure should be same.
+
+truncate table emp2;
+
+create table emp3 as select empno,ename,job,sal,deptno from emp where 1=2;
+
+insert into emp3 select empno,ename,job,sal,deptno from emp1;
+
+insert into emp2 select empno,ename,job,deptno from emp1;
+
+result: error not enough values
+
+insert into emp2(empno,ename,job,deptno) select empno,ename,job,deptno from emp1;
+
+UPDATE:
+=======
+	It is used to modify the data which is existed in table.
+
+updating with "WHERE" clause:
+=============================
+syntax:
+=======
+Update <tablename> set <exp1>=<val1>,<exp2>=<val2>,.......
+where <exp>=<value>;
+
+Example:
+========
+update student set course='java' where sid=102;
+
+update student set course='unix',sname='smith jr' where sid=102;
+
+update student set course=null where course='unix';
+
+Note: 
+above statement will update only those records which are statifying the where clause condition.
+
+
+
+
+
+updating without "WHERE" clause:
+================================
+update student set course='java';
+
+Note: 
+above statement will update all the records.
+
+How to update null values:
+==========================
+update student set sid=103 where sid=null;
+
+Note: 
+======
+* Null value is uncomparable,unknown and undefined value so it not   possible to compare with any expression(column) with any Operator.
+
+* To identify null values we have operator as "IS NULL"
+
+update student set sid=103 where sid is null;
+
+Note:
+Above statement will update all the records which are having null values. so it not preferrable to udpate null values of same values.
+
+* To identify records as unique we have rowid pseudo column.
+
+
+updating dupliate records with rowid:
+=====================================
+
+* to display the records with rowid.
+
+SQL>select rowid,sid,sname,course from  student;
+
+ROWID                     SID SNAME           COURSE
+------------------ ---------- --------------- ----------
+AAARnEAAEAAAAK4AAA        101 scott           oracle
+AAARnEAAEAAAAK4AAB        102 smith
+AAARnEAAEAAAAK4AAC					
+AAARnEAAEAAAAK4AAD					
+AAARnEAAEAAAAK4AAE        105 mike            unix
+
+update student set sid=103 where rowid='AAARnEAAEAAAAK4AAC';
+
+ROWID:
+======
+* In every table we have rowid pseudo column which returns the address of the record.
+* Oracle database rowid values contain information neccessary to locate the a row in memory.  
+
+
+updating table columns with another table data:
+===============================================
+sql>
+update emp2 set hiredate=(select hiredate from emp1 where emp.empno=emp2.empno);
+
+DELETE:
+=======
+	it is used to delete the entire record from table.
+
+syntax:
+=======
+deleting with "WHERE" clause:
+=============================
+	delete from <tablename> where	
+
+Note: It deletes only those records which are satisfying the condition.
+
+Example:
+========
+delete from emp1 where deptno=30;
+
+Deleting without "WHERE" clause:
+================================
+	delete from <tablename>;
+
+Note: it deletes entire data from table.
+
+example:
+========
+delete from emp1;
+
+Difference between truncate and delete:
+=======================================
+truncate:
+========
+* It deletes the entire data at a time perminantly
+* we can not delete specific records
+* truncated data can not be restored.
+* it is perminant transaction which directly effects on the table.
+
+Delete:
+=======
+* it deletes the entire data but not peminanatly
+* we can delete specific records
+* deleted data with "delete" command we can restore it.
+* it is temparary transaction which doesn't effect on the database, effects on buffer only.
+
+MERGE:
+======
+* Merge statement to select rows from one or more sources for update or insert into a table or view.
+* Here we can specify conditions to determine whether to update or insert into the target   tables.
+
+* Merge is convenient way to combine multiple operations.
+* Merge lets you avoid multiple INSERT,UPDATE OR DELETE 
+
+CLAUSES USING WITH "MERGE" COMMAND
+==================================
+1. INTO 
+2. USING
+3. ON
+
+drop table student_trg purge;
+
+create table student_trg
+(
+id number(2),
+name varchar2(15),
+score number(4)
+);
+
+insert into student_trg values(1,'Jack',540);
+insert into student_trg values(2,'Rose',null);
+insert into student_trg values(3,'William',650);
+insert into student_trg values(4,'Caledon',620);
+insert into student_trg values(5,'Fabrizio',600);
+insert into student_trg values(6,'Thomas',null);
+insert into student_trg values(7,'Ruth',680);
+insert into student_trg values(8,'Spacer',555);
+
+drop table student_src;
+
+create table student_src
+(
+id number(2),
+name varchar2(15),
+score varchar2(4)
+);
+
+/
+
+insert into student_src values(7,'Ruth',790);
+insert into student_src values(8,'Spicer',620);
+insert into student_src values(9,'Wallace',600);
+insert into student_src values(10,'Lizzy',null);
+insert into student_src values(11,'Brock',705);
+
+
+commit;
+
+
+syntax:
+=======
+merge
+into <target_table>
+using
+	<source_table/view/result of subquery>
+ON
+    	<match condition>
+WHEN MATCHED THEN
+	<update clause>
+	<delete clause>
+WHEN NOT MATCHED THEN
+	<insert clause>
+
+merge 
+into student_trg trg
+using
+	student_src src
+ON
+    	src.id=trg.id
+WHEN MATCHED THEN
+	update target table
+WHEN NOT MATCHED THEN
+	insert into target table
+
+
+
+SQL> select * from student_trg;
+
+        ID NAME                 SCORE
+---------- --------------- ----------
+         1 Jack                   540
+         2 Rose
+         3 William                650
+         4 Caledon                620
+         5 Fabrizio               600
+         6 Thomas
+         7 Ruth                   680
+         8 Spacer                 555
+
+
+SQL> select * from student_src;
+
+        ID NAME                 SCORE
+---------- --------------- ----------
+         7 Ruth                   690
+         8 Spicer                 620
+         9 Wallace                600
+        10 Lizzy
+        11 Brock                  705
+
+Example
+=======
+
+merge into student_trg trg
+using student_src src
+on (trg.id=src.id)
+when matched then
+update set trg.name=src.name,trg.score=src.score
+when not matched then
+insert (trg.id,trg.name,trg.score) values(src.id,src.name,src.score)
+
+
+
+merge 
+into student_trg trg
+using student_src src
+on(trg.id=src.id)
+WHEN MATCHED THEN
+update set trg.name=src.name,trg.score=src.score
+WHEN NOT MATCHED THEN
+insert (trg.id,trg.name,trg.score) values (src.id,src.name,src.score);
+
+
+merge 
+into student_trg s1
+using
+(select id,name,score from student_src) s2 
+on(s1.id=s2.id)
+WHEN MATCHED THEN
+update set s1.name=s2.name,s1.score=s2.score
+WHEN NOT MATCHED THEN
+insert (s1.id,s1.name,s1.score) values (s2.id,s2.name,s2.score);
+
+select * from student_trg order by 1;
+
+Example2:
+=========
+create table emp1 as select * from emp where depnto in(10,20);
+
+create table emp2 as select * from emp;
+
+
+merge
+into emp1
+using emp2
+on(emp1.empno=emp2.empno)
+WHEN MATCHED THEN
+update set emp1.sal=emp2.sal,emp1.hiredate=emp2.hiredate
+WHEN NOT MATCHED THEN
+insert (emp1.empno,emp1.ename,emp1.job,emp1.mgr,emp1.hiredate,emp1.sal,emp1.comm,emp1.deptno) values (emp2.empno,emp2.ename,emp2.job,emp2.mgr,emp2.hiredate,emp2.sal,emp2.comm,emp2.deptno);
+
+
+
+INSERT ALL
+==========
+we can use "Insert all" statement without a condition. This provides multiple inserts at a time in table.
+
+syntax:
+=======
+INSERT ALL
+into <tablename> values <columns list>
+into <tablename> values <columns list>
+into <tablename> values <columns list>
+...
+...
+<select statement>;
+
+
+drop table student purge;
+
+create table student
+(
+sid number(4),
+sname varchar2(15),
+course varchar2(15)
+);
+
+select * from dept;
+
+insert all
+into student(sid,sname,course) values(101,'scott','oracle')
+select * from dept;
+
+truncate table student;
+
+select * from dept;
+
+insert all
+into student(sid,sname,course) values(101,'scott','oracle')
+into student(sid,sname,course) values(102,'smith','java')
+select * from dept;
+
+truncate table student;
+
+select * from dual;
+
+insert all
+into student(sid,sname,course) values(101,'scott','oracle')
+into student(sid,sname,course) values(102,'smith','java')
+into student(sid,sname,course) values(103,'miller','Unix')
+into student(sid,sname,course) values(104,'mike','Linux')
+select * from dual;
+
+rollback;
+
+
+insert all
+into student(sid,sname,course) values(101,'scott','oracle')
+select * from emp where rownum<=5;
+
+drop table student1;
+drop table student2;
+drop table student3;
+create table student1 as select * from student where 1=2;
+create table student2 as select * from student where 1=2;
+create table student3 as select * from student where 1=2;
+
+inserting into multiple tables
+==============================
+insert all
+into student1 values(101,'scott','oracle')
+into student2 values(101,'scott','oracle')
+into student3 values(101,'scott','oracle')
+select * from dual;
+
+
+
+

@@ -1,0 +1,237 @@
+syntax to create a table
+========================
+
+create table <tablename>
+(
+col1name  datatype(size) ,
+col2name  datatype(size) ,
+col3name  datatype(size)
+) ;
+
+
+create table <tablename>(col1name  datatype(size) ,col2name  datatype(size) ,col3name  datatype(size)) ;
+
+
+Datatypes:
+==========
+1. Number
+2. Char
+3. Varchar2(size)
+4. Date
+5. Raw
+6. Long
+7. LongRaw
+8. LOB(clob,blob,bfile)
+9. Timestamp
+
+NUMBER:
+=======
+
+* It accepts only numeric
+* Maximum size is 38 digits=> 1000000000000000000000000000....upto 38digits
+* Default size is 38 digits=> 1000000000000000000000000000000000000000.....
+
+Note: If we don't provide size then it will take maximum size as default size.
+
+Number(4):
+==========
+	* valid data   :  0,10,100,1000,9999 valid range(0-9999)
+	* invalid data :  10000, (more than 4 digit numbers)
+
+Number(p,s):
+============
+P==>precision => Represents total no of digits including decimal values.(10.55)
+s==>scale     => Represents only no of digits after decimal point.  ( .55)
+
+
+Note:
+=====
+* Here scale is mandatory by system not by user
+
+number(4,2):
+	10  ==> 10.00
+	10.45 ==> 10.45
+	10.3  ==> 10.30
+	5     ===> 5.00
+	156	==> 156.00(invalid)
+	2.456   ==> 2.456(invalid)
+
+
+Example:
+========
+
+number(4,2):
+============
+	valid data 	:0,1,1.45,10.45,99,15.8
+	invalid data	:100==>100.00,1.234  
+
+1 ==> 1.00
+99 ==> 99.00
+100  ==> 100.00 invalid precision
+1.234==> 1.234 invalid but stores only 1.23 
+
+
+create table test
+(
+sno number(4,2)
+);
+
+valid data :
+	0-99
+
+
+CHAR:
+=====
+* It accepts alpha numeric values
+* maximum size is 2000 bytes
+* Default size is 1 byte
+* Fixed length feature
+
+Note: ONE character will occupy ONE byte memory.
+
+Example:
+=======
+
+char
+====
+	valid data	: 'a','@','1',':'
+	invalid data	: 'ab','12'
+
+create table t1(col1 char);
+
+char(4)
+=======
+	valid data	: 'ravi','ram','hi'
+	invalid data	: 'ramesh','suresh'
+
+create table t1(col1 char(4));
+
+
+VARCHAR2(size):
+===============
+* It accepts alpha numeric values
+* Maximum size is 4000 bytes
+* No Default size
+* variable length feature
+
+create table t1(col1 varchar2(15));
+
+
+Example:
+=======
+varchar2(4)
+==========
+	valid data	: 'ravi','ram','hi'
+	invalid data	: 'ramesh','suresh'
+
+
+Difference between char and varchar2(s):
+========================================
+
+create table t(col1 char(7),col2 varchar2(7));
+
+
+T
+|=================================
+|col1 =>char(7)	|col2=>varchar2(7)|		
+|=================================
+|ravi___       	|ravi	 	 |
+|	  	|	         |
+|=================================
+
+* in case of char memory will be wasted if we don't use because it is fixed
+* in case of varchar2 memory will not be wasted if we don't use Because it has variable length feature.
+
+
+DATE:
+=====
+* It is used to store dates
+* Maximum size is 7 bytes
+
+Oracle default date format is 
+		
+		'dd-mon-yy' or 'dd-month-yyyy'
+
+dd => date of the month in number format(1-31)
+mon=> first 3 character from the name of the month(jan-dec)
+yy=> last 2 digits from the year(2015)=>15
+
+
+Example:
+=======
+	10-jan-15 10:45:35
+
+* The date Range on oracle 4713B.C to 9999 A.D
+
+
+4713  4712  3713  2713   1713  713 113  1 100 1000  2000 2015 2016 2024 9999
+
+
+Raw:-
+* It is used to store unstructured data.
+* ex: pictures,photos, digital signatures
+* maximum size is 2000 bytes.
+
+Long:-
+======
+* It is used to store text type of data.
+* max size is 2 GB.
+* In a table only one column can have one "long" type.
+
+LongRaw:-
+=========
+* It is a combination of raw and long (Binary Format Data)
+* we can store unstructured data and text type of data.
+* maximum size is 2 G.B
+
+Lob:-Large objects
+* max size is 4G.B
+
+types
+=====
+*clob->character lob-> The large amount of charecter data upto 4G.B
+*blob->binary lob-> movies,sounds,photos,pictures.It is Internal database.
+*bfile->binary file-> movies,sounds,photos,pictures.It is external database.
+
+
+Time stamp:
+============
+10-dec-97  10:15:45:999999 am/pm WITH TIME ZONE(+5:30) 
+   |           |
+ date       HH:MM:ss:MS
+
+HH: Hours=> 0-24 => 1 day/24
+MM: Minutes=> 0-60 => 1h/60Mi
+SS: Seconds=> 0-60 => 1m/60ss
+MS: Nano seconds
+	default => 0-999999 => 1ss/999999         => 1 ns
+	actual=> 0-999999999=> 1ss/999999999      => 1 ns
+
+create table tname(id number(4),created_at timestamp);
+
+
+
+
+Linux
+=====
+create table movies(m_id number,m_name varchar2(40),movie bfile);
+create directory My_Dir AS '/tmp'
+insert into movies values(001,'Titanic',bfilename('My_Dir','titanic.mp4');
+
+windows:
+========
+create or replace directory IMDB AS 'D:/movies/imdb';
+create table movies(m_id number,m_name varchar2(40),movie bfile);
+
+insert into movies values(001,'Titanic',bfilename('IMDB','titanic.mp4');
+
+SELECT * FROM movies;
+
+
+
+
+
+
+
+
+

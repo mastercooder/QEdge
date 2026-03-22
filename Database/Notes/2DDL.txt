@@ -1,0 +1,468 @@
+DDL: DATA DEFINITION LANGUAGE
+=============================
+CREATE , ALTER , TRUNCATE , RENAME , DROP , FLASHBACK , PURGE
+
+CREATE:
+=======
+It is used to create database object(table,view,function,trigger,sequence,procedure,.....)
+
+syntax for table creation:
+==========================
+create table <tablename>
+(
+colname1 datatype(size),
+colname2 datatype(size),
+colname3 datatype(size)
+);
+
+STUDENT
+=======
+sid 	number(4)
+sname 	varchar2(15)
+course 	varchar2(15)
+
+
+create table STUDENT(sid number(4),sname varchar2(15),course varchar2(15));
+
+		( or )
+
+create table STUDENT
+(
+sid number(4),
+sname varchar2(15),
+course varchar2(15)
+);
+
+sql>set line 100
+sql>set pagesize 90
+sql>column table_name format a40;
+
+
+To see the structure of the table
+=================================
+sql>describe student  
+	or
+sql>desc student
+
+
+To see the current user
+=======================
+sql>show user
+user is "scott"
+
+
+to see all the tables under current user
+========================================
+sql>select * from cat;
+	or
+sql>select * from tab;
+
+column tname format a35
+
+CAT:It is catlog table which is system defined table which maintains all the tables information which are created under current user.
+
+
+Existing tables:
+================
+select * from cat;
+
+desc emp
+
+select * from emp;
+
+
+creating table from existing table:
+===================================
+sql>create table emp1 as select * from emp;
+
+sql>select * from emp1;
+
+creating table from existing table with out data:
+=================================================
+sql>create table emp2 as select * from emp where 1=2;
+sql>select * from emp2;
+sql>desc emp2
+sql>desc emp
+
+creating table from existing table with specific data:
+======================================================
+sql>create table emp3 as select * from emp where deptno=30;
+sql>select * from emp3;
+
+creating table from existing table with specific columns:
+=========================================================
+sql>create table emp4 as select empno,ename,job,sal,deptno from emp;
+sql>select * from emp4;
+
+creating table from existing table with specific columns and specific data:
+===========================================================================
+sql>create table emp5 as select empno,ename,job,sal,deptno from emp where deptno=10;
+sql>select * from emp5;
+
+
+SOME EXAMPLES of TABLE creations
+================================
+
+create table MANAGERS as select * from emp where JOB='MANAGER';
+
+create table CLERKS as select * from emp where JOB='CLERK';
+
+create table DEPT30_INFO as select * from emp where deptno=30;
+
+
+Alter:
+======
+	It is used to modify the structure of the table
+
+Available Modifictaions on table structure:
+===========================================
+1.adding new column to existing structure== add
+2.changing the datatype/sizes of structure == modify
+3.changing the name of the column. == rename
+4.removing the column  == drop
+
+alter command options:
+======================
+1.add  2 . modify  3. rename  4. drop
+
+sql>desc student
+
+Existing structure:
+===================
+student
+-------
+sid 	number(4)
+sname   varchar2(15)
+course  varchar2(15)
+
+1.Adding:
+=========
+
+alter table <tablename> add <newcolname> <datatype>;
+
+sql>alter table student add fee number(7,2);
+
+sql>desc student
+
+sid 	number(4)
+sname   varchar2(15)
+course  varchar2(15)
+fee 	number(7,2)
+
+Adding mulitiple columns:
+=========================
+sql>alter table student add(phone number(10),city varchar2(15));
+
+sql>desc student
+
+sid 	number(4)
+sname   varchar2(15)
+course  varchar2(15)
+fee 	number(7,2)
+phone 	number(10)
+city	varchar2(15)
+
+2.Chaning the datatype/size:
+============================
+sql>alter table student modify city varchar2(30);
+
+sql>desc student
+
+sid 	number(4)
+sname   varchar2(15)
+course  varchar2(15)
+fee 	number(7,2)
+phone 	number(10)
+city	varchar2(30)
+
+sql>alter table student modify city char(20);
+
+sql>desc student
+sid 	number(4)
+sname   varchar2(15)
+course  varchar2(15)
+fee 	number(7,2)
+phone 	number(10)
+city	char(30)
+
+Note: only one column can be modified at a time.
+
+combination of "add" and "modify":
+==================================
+sql>alter table student add country varchar2(25) modify city varchar2(25);
+
+sql>desc student
+sid 	number(4)
+sname   varchar2(15)
+course  varchar2(15)
+fee 	number(7,2)
+phone 	number(10)
+city	varchar2(25)
+country varchar2(25)
+
+Renaming the column:
+====================
+syntax:
+=======
+alter table <tablename> rename column <oldname> to <newname>;
+
+Example:
+========
+sql>alter table student rename column phone to contact;
+
+Note: 
+=====
+* Only one column can be rename at a time
+* renaming column of the table structure is introduced in Oracle9i version onwards
+
+oracle versions
+===============
+oracle 1.0  , 2, 3 , 4 ,5 ,6 ,7 ,8 ,8i ,9i , 10g , 11g ,12c Release1,12c r2
+
+sql>desc student
+sid 		number(4)
+sname   		varchar2(15)
+course  		varchar2(15)
+fee 		number(7,2)
+contact 		number(10)
+city		varchar2(25)
+country 		varchar2(25)
+
+Removing a column -- drop:
+==========================
+single column droping:
+======================
+sql>alter table student drop column country;
+
+sql>desc student
+sid 		number(4)
+sname   	varchar2(15)
+course  	varchar2(15)
+fee 		number(7,2)
+contact_num 	number(10)
+city		varchar2(25)
+
+multiple columns droping:
+=========================
+sql>alter table student drop(city,contact,fee);
+
+sql>desc student
+sid 		number(4)
+sname   	varchar2(15)
+course  	varchar2(15)
+
+
+TRUNCATE:
+=========
+	It is used remove entire data of the table perminantly.
+
+syntax:
+=======
+	truncate table <tablename>;
+
+Example:
+========
+sql>select * from emp5;
+sql>truncate table emp5;
+
+*After turncating table data is not available only structure is available.
+
+sql>select * from emp5;
+sql>desc emp5
+
+
+Rename:
+=======
+It is used to change the name of the object.
+
+syntax:
+=======
+	rename <oldname> to <newname>
+
+example:
+========
+sql>select * from cat;
+sql>select * from emp4;
+sql>rename emp4 to employee4;
+sql>select * from cat;
+sql>rename employee4 to emp4;
+sql>select * from cat;
+sql>select * from emp4;
+
+
+Drop:
+=====
+It is used to remove the object from database.
+
+syntax:
+=======
+	drop table <tablename>;
+
+Example:
+=======
+sql>drop table emp5;
+
+Note:
+=====
+all dropped tables are available in Recyclebin;
+
+Recyclebin:
+===========
+	It is a system defined table which maintains all dropped tables from database
+
+Note: this concept is introduced oracle10g version onwards.
+
+How to see the Recyclebin:
+==========================
+sql>show recyclebin
+
+Original Name	Recyclebin Name          	object type     drop time
+====================================     	=========	=========
+emp4		BIN$ald1233aldf           	table	    	2012:4:01 	
+emp4		BIN$TJMaq39mQQ2y2glNYIi7LQ==$0  table 		2012-01-29:04:17:48
+
+
+user_recyclebin
+===============
+	It is a system defined table where we can see full information about dropped objects
+
+desc user_recyclebin
+
+========================================================================
+Name				Null		datatype
+=========================================== 	========================
+OBJECT_NAME                     NOT NULL 	VARCHAR2(30)
+ORIGINAL_NAME                                   VARCHAR2(32)
+OPERATION                                       VARCHAR2(9)
+TYPE                                            VARCHAR2(25)
+TS_NAME                                         VARCHAR2(30)
+CREATETIME                                      VARCHAR2(19)
+DROPTIME                                        VARCHAR2(19)
+DROPSCN                                         NUMBER
+PARTITION_NAME                                  VARCHAR2(32)
+CAN_UNDROP                                      VARCHAR2(3)
+CAN_PURGE                                       VARCHAR2(3)
+RELATED                         NOT NULL 	NUMBER
+BASE_OBJECT                     NOT NULL 	NUMBER
+PURGE_OBJECT                    NOT NULL 	NUMBER
+SPACE                		                NUMBER   8333805854
+========================================================================
+
+
+select object_name,createtime,droptime,space,ts_name from user_recyclebin;
+
+
+Note:
+=====
+	we can see recyclebin provided names in catalog(cat) table.
+
+select * from cat;
+
+FLASHBACK:
+==========
+	It is used to restore a object from recyclebin to database.
+
+syntax:
+=======
+flashback table <tablename> to before drop;
+
+sql>show recyclebin;
+
+example:
+========
+sql>flashback table emp5 to before drop;
+
+
+changing the name of the object while flashbacking:
+===================================================
+syntax:
+=======
+flashback table <tablename> to before drop rename to <newname>;
+
+example:
+========
+sql>select * from emp4;
+sql>drop table emp4;
+sql>show recyclebin
+sql>create table emp4 as select empno,ename,job,sal,deptno from emp;
+sql>flashback table emp4 to before drop;
+Error:ORA-38312: original name is used by an existing object
+
+
+sql>flashback table emp4 to before drop rename to employee4;
+
+
+Flashbacking the mulitple object from recyclebin:
+=================================================
+Note: 
+=====
+*At time of restoring table from recyclebin to database it follows last in first out from recyclebin when you  have objects  with same.
+
+*At time of removing table from recyclebin perminantely using "PURGE" it follows first in first out from recyclebin when you  have objects  with same.
+
+sql>drop table emp4;
+sql>create table emp4 as select empno,ename,job,sal,deptno from emp;
+sql>drop table emp4;
+sql>create table emp4 as select empno,ename,job,sal,deptno from emp;
+sql>drop table emp4;
+sql>show recyclebin;
+
+sql>flashback table emp4 to before drop;
+
+
+PURGE:
+======
+It is used to remove a object from recyclebin
+
+syntax:
+=======
+	purge table <tablename>;
+
+example:
+========
+To remove a single object:
+==========================
+sql>purge table emp3;
+
+
+To make empty recyclebin:
+=========================
+
+sql>purge recyclebin;
+
+
+remove a object from database without sending to recyclebin:
+============================================================
+sql>drop table emp3 purge;
+
+
+spool:
+======
+It is used to record each and every sql statement of sqlplus editor in file format.
+
+sql>spool path\filename
+
+sql>spool out
+
+example:
+========
+sql>spool e://raju/class1.txt
+sql>select * from cat;
+
+sql>spool out
+
+appeding the file:
+==================
+
+sql>spool e://raju/class1.txt append
+sql>select * from emp;
+sql>spool out
+
+
+drop table student;
+drop table emp1;
+drop table emp2;
+drop table emp3;
+drop table emp4;
+
+purge recyclebin;

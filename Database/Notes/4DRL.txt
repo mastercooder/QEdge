@@ -1,0 +1,85 @@
+DRL: data retrival language:
+============================
+	It is used to extract the data from database tables.
+
+SELECT:
+=======
+Example:
+========
+
+select * from emp;
+
+* indicates all columns.
+
+select empno,ename,job,sal from emp;
+
+desc emp
+========
+empno,ename,job,mgr,hiredate,sal,comm,deptno
+
+select * from emp;
+select deptno,hiredate,empno,sal,job from emp;
+select empno,ename,job,sal,tax,deptno from emp;
+
+column alias:
+=============
+	Defining new data definitions with temparary name.
+
+desc emp
+========
+empno,ename,job,mgr,hiredate,sal,comm,deptno
+
+select sal as salary from emp;
+select sal salary from emp;
+select hiredate as "Join Date" from emp;
+select hiredate "Join Date" from emp;
+select hiredate Join Date from emp;
+select hiredate Join_Date from emp;
+
+
+tax=sal*0.15
+============
+select empno,ename,job,sal,sal*0.15,comm,deptno from emp;
+select empno,ename,job,sal,sal*0.15 tax,comm,deptno from emp;
+select empno,ename,job,sal,comm,sal+comm,deptno from emp;
+select empno,ename,job,sal,comm,sal+comm gross_sal,deptno from emp;
+
+
+hra(45%),da(35%),ta(25%)
+
+select empno,ename,job,sal,sal*0.45 as HRA,sal*0.35 DA,sal*0.25,deptno from emp;
+select empno,ename,job,sal,sal*0.45 as HRA,sal*0.35 DA,sal*0.25 TA,deptno from emp;
+
+* "as" is key word to define column alias name.
+* "as" is optional.
+
+Table alias:
+============
+	Generating a table as virtual table from physical table with in database.
+
+select * from emp;
+select * from emp e;
+
+Note:
+=====
+*Once select statement with table alias executed then "E" table will be destroyed.
+
+*physical and virtual table columns are different.
+
+
+select * from emp;
+select * from emp e;
+select empno from emp;
+select emp.empno from emp;
+select e.empno from emp;(wrong)
+select e.empno from emp e;
+select e.empno,ename from emp e;
+select emp.empno,ename from emp;
+select emp.empno from emp e;(wrong)
+select ename from emp;
+select ename from emp e;
+
+
+tablename.columnname => full identification of column
+
+
