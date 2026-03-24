@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export class PasArgToEvent extends Component {
+class PasArgToEvent extends Component {
   constructor() {
     super();
     this.state = {

@@ -1,0 +1,22 @@
+.Cond_Rend{
+    text-align: center;
+}
+
+.CondRend_Heading{
+    background-color: #282c34;
+    padding: 20px;
+    color: white;
+}
+
+.CondRand_1{
+    border: 5px solid black;
+    margin: 20px;
+    padding-bottom: 20px;
+    font-size: 20px;
+}
+
+.CondRand_2{
+    border: 5px solid black;
+    margin: 20px;
+    font-size: 20px;
+}

@@ -1,0 +1,9 @@
+.txtColor{
+    color: red;
+}
+.txtSize{
+    font-size: 45px;
+}
+.txtUpper{
+    text-transform: uppercase;
+}

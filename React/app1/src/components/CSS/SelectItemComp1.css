@@ -1,0 +1,41 @@
+.input_box_2{
+    border: 5px solid black;
+    margin: 20px 10px;
+    padding-bottom: 30px;
+}
+
+.SelectItemComp1_heading{
+    text-decoration: underline;
+    padding-bottom: 10px;
+}
+
+.SelectItem_inputbox select{
+    margin-bottom: 30px;
+}
+
+.SelectItem_inputbox label{
+    font-size: 20px;
+}
+
+.SelectItem_inputbox select{
+    padding: 5px;
+    font-size: 20px;
+}
+
+.SelectItem_inputbox button{
+    margin: 10px;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.crTable{
+    margin: auto auto;
+    font-size: 20px;
+    border: 2px solid black;
+}
+
+.crTable td{
+    padding: auto auto;
+    width: 200px;
+    border: 2px solid black;
+}
