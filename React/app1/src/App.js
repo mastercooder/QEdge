@@ -8,6 +8,7 @@ import Student from "./components/pages/Student";
 import StyleComp1 from "./components/pages/StyleComp1";
 import ReadText from "./components/pages/ReadText";
 import CondRend from "./components/pages/CondRend";
+import StudentDashbord from "./Assignmentes/StudentDashbord";
 
 
 function App() {
@@ -20,7 +21,8 @@ function App() {
         <Link to="/student" className="nav-link">Student</Link> | {" "}
         <Link to="/styleComp" className="nav-link">StyleComp</Link> | {" "}
         <Link to="/readtext" className="nav-link">ReadText</Link> | {" "}
-        <Link to="/condrend" className="nav-link">CondRend</Link>
+        <Link to="/condrend" className="nav-link">CondRend</Link> | {" "}
+        <Link to="/assignment1" className="nav-link">Assignment - 1</Link>
       </nav>
 
       <Routes>
@@ -80,6 +82,15 @@ function App() {
           element={
             <>
               <CondRend className="Cond_Rend"/> 
+            </>
+          }
+          />
+
+          {/* Assignment - 1 */}
+          <Route path = "/assignment1" 
+          element={
+            <>
+              <StudentDashbord className="Student_Dashboard"/>
             </>
           }
           />

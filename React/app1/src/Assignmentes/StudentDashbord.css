@@ -1,0 +1,50 @@
+.Student_Dashboard {
+  text-align: center;
+  color: white;
+}
+
+.StudentDash_Heading {
+  background-color: #282c34;
+  padding: 20px;
+}
+
+.SD_inputbox input::placeholder{
+    color: rgb(145, 163, 179);
+}
+ 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+.SD_inputbox input,
+.SD_inputbox button, 
+.SD_inputbox select{
+  margin: 0px 10px;
+  padding: 5px;
+  font-size: 20px;
+  color: rgb(199, 207, 214);
+  overflow: hidden;
+}
+
+.SD_Display{
+    margin: 30px 0px;
+}
+.SD_Display table{
+    margin: auto auto;
+    border: 2px solid black;
+}
+.SD_Display td{
+    border: 2px solid black;
+    padding: 10px 50px;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+.SD_btn{
+    padding: 10px;
+    font-size: 20px;
+    margin: 0px 10px;
+    color: white;
+}
