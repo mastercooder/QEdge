@@ -1,0 +1,25 @@
+.Contaxt_101{
+    text-align: center;
+    color: white;
+}
+.Contaxt101_Heading{
+    background-color: #282c34;
+    padding: 20px;
+}
+.Contaxt_101 h3{
+    font-size: 20px;
+}
+
+/* Borders */
+.Contaxt_101{
+    border: 5px solid blue;
+}
+.Contaxt_102{
+    border: 5px solid red;
+}
+.Contaxt_103{
+    border: 5px solid yellow;
+}
+.Contaxt_104{
+    border: 5px solid black;
+}

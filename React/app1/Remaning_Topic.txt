@@ -1,0 +1,28 @@
+            TOPICS COVERED
+           =================
+
+React Fragmentation
+    It is a utility that let's you group multiple elements 
+    without adding a extra nodes to the DOM.
+
+ContaxtAPI
+fetch - call API
+
+
+            TOPICS NOT COVERED
+           ====================
+
+
+method - ComponenetDidMount
+Images
+bootstrap
+callBack request
+Error Boundaries
+
+
+Function Componenet
+Hooks
+Rules of Hooks
+    UseState
+    UseEffect
+    CustomHook

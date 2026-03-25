@@ -1,0 +1,27 @@
+.Course{
+    text-align: center;
+}
+.Course_Heading{
+    color: white;
+    background-color: #282c34;
+    padding: 20px;
+}
+.Course_Input input,
+.Course_Input select,
+.Course_Input button{
+    margin: 30px 20px;
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+}
+.Cousre_Display table{
+    margin: auto auto;
+    border: 3px solid black;   
+}
+.Cousre_Display td,
+.Cousre_Display th{
+    border: 3px solid black;
+    padding: 10px 50px;
+    color: white;
+    font-size: 20px;
+}

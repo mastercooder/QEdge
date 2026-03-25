@@ -1,0 +1,12 @@
+.Call_API{
+    text-align: center;
+    color: white;
+}
+.CallAPI_Heading{
+    background-color: #282c34;
+    padding: 20px;
+}
+.CallAPI_Display h3{
+    text-decoration: underline;
+    font-size: 20px;
+}
