@@ -1,5 +1,5 @@
 import React, { Component, createContext } from "react";
-import "../CSS/Contaxt101.css";
+import "../style/Contaxt101.css";
 import Contax102 from "./Contaxt102";
 
 export const MyContaxt = createContext();

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../CSS/FragComp1.css";
+import "../style/FragComp1.css";
 import FragComp2 from "./FragComp2";
 
 class FragComp1 extends Component {

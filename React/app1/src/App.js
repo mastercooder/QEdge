@@ -9,7 +9,7 @@ import StyleComp1 from "./components/pages/StyleComp1";
 import ReadText from "./components/pages/ReadText";
 import CondRend from "./components/pages/CondRend";
 import StudentDashbord from "./Assignmentes/Student Database/pages/StudentDashbord";
-import Course from "./Assignmentes/Search Course/pages/Course";
+import Course from "./Assignmentes/Search Course/pages/CourseDashboard";
 import FragComp1 from "./components/pages/FragComp1";
 import Contax101 from "./components/pages/Context101";
 import CallApi from "./components/pages/CallApi";

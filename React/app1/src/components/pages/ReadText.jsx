@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../CSS/ReadText.css";
+import "../style/ReadText.css";
 import SelectItemComp1 from "./SelectItemComp1";
 
 class ReadText extends Component {

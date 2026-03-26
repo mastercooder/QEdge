@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '../CSS/StyleComp3.css'
+import '../style/StyleComp3.css'
 
 class StyleComp3 extends Component {
   render() {

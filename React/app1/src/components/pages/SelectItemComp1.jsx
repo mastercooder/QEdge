@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../CSS/SelectItemComp1.css";
+import "../style/SelectItemComp1.css";
 
 class SelectItemComp1 extends Component {
   constructor(props) {

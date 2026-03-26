@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '../CSS/CallApi.css'
+import '../style/CallApi.css'
 
 class CallApi extends Component {
     constructor(){

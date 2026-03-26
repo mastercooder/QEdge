@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '../CSS/Parent.css'
+import '../style/Parent.css'
 
 class Parent extends Component {
   render() {

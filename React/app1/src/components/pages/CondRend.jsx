@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Guest from "./Guest";
 import User from "./User";
-import "../CSS/CondRend.css";
+import "../style/CondRend.css";
 import CondRend2 from "./CondRend2";
 
 class CondRend extends Component {
