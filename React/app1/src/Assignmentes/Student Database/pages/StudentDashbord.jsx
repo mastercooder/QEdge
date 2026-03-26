@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./StudentDashbord.css";
+import "../style/StudentDashbord.css";
 import SD_inputbox from "./SD_inputbox";
 import SD_Display from "./SD_Display";
 
@@ -75,7 +75,7 @@ class StudentDashbord extends Component {
 
   deleteValue = (indexToDelete) => {
     const newStudents = this.state.students.filter(
-      (stu, index) => index != indexToDelete,
+      (stu, index) => index !== indexToDelete,
     );
     this.setState({ students: newStudents });
   };
@@ -94,7 +94,7 @@ class StudentDashbord extends Component {
   render() {
     return (
       <div className={this.props.className}>
-        <h1 className="StudentDash_Heading">Student Dashbord</h1>
+        <h1 className="StudentDash_Heading">Entrollment Window</h1>
 
         <SD_inputbox
           handleSubmit={this.handleSubmit}

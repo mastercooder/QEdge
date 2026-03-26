@@ -15,7 +15,7 @@ class StyleComp1 extends Component {
     };
     return (
       <div className={this.props.className}>
-        <h3 className="Sc_Title">Style Component</h3>
+        <h1 className="Sc_Title">Style Component</h1>
         <div className="Sc_1">
           {/* Inline CSS */}
           <h2>Applying CSS</h2>

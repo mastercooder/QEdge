@@ -8,8 +8,8 @@ import Student from "./components/pages/Student";
 import StyleComp1 from "./components/pages/StyleComp1";
 import ReadText from "./components/pages/ReadText";
 import CondRend from "./components/pages/CondRend";
-import StudentDashbord from "./Assignmentes/Student Database/StudentDashbord";
-import Course from "./components/pages/Course";
+import StudentDashbord from "./Assignmentes/Student Database/pages/StudentDashbord";
+import Course from "./Assignmentes/Search Course/pages/Course";
 import FragComp1 from "./components/pages/FragComp1";
 import Contax101 from "./components/pages/Context101";
 import CallApi from "./components/pages/CallApi";
@@ -41,11 +41,11 @@ function App() {
         </Link>{" "}
         |{" "}
         <Link to="/assignment1" className="nav-link">
-          Assignment - 1
+          Assignments
         </Link>{" "}
         |{" "}
         <Link to="/course" className="nav-link">
-          Student Login
+          Course Details
         </Link>{" "}
         |{" "}
         <Link to="/fragComp" className="nav-link">
@@ -71,9 +71,7 @@ function App() {
           path="/"
           element={
             <>
-              <header className="App-header">
-                <h3>React Application</h3>
-              </header>
+              <h1 className="App-header">React Application</h1>
 
               <div className="div_1">
                 <h3 className="app_h3">App.js</h3>
@@ -129,7 +127,7 @@ function App() {
           }
         />
 
-        {/* Assignment - 1 */}
+        {/* Assignment */}
         <Route
           path="/assignment1"
           element={
@@ -139,7 +137,7 @@ function App() {
           }
         />
 
-        {/* STUDENT LOGIN */}
+        {/* COURSE DEATILS */}
         <Route path="/course" element={<Course />} />
 
         {/* FRAGEMENT COMPONENET */}

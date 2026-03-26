@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../CSS/Course.css";
+import "../style/Course.css";
 
 class Course extends Component {
   constructor() {
@@ -24,7 +24,7 @@ class Course extends Component {
       <div className="Course">
         <h1 className="Course_Heading">Course Details</h1>
         <form className="Course_Input">
-          <input type="text" name="" placeholder='Course Name'/>
+          <input type="text" name="" placeholder='Search courses (e.g. Backend, Frontend, AI, SAP...)'/>
           <input type="text" name="" placeholder='Fee'/>
           <select>
             <option value=''>Select Course</option>
@@ -32,7 +32,7 @@ class Course extends Component {
             <option value='React'>React</option>
             <option value='JavaScripts'>JavaScripts</option>
           </select>
-          <button>Submit</button>
+          <button>Search</button>
 
         </form>
         <div className="Cousre_Display">
