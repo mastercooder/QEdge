@@ -5,9 +5,21 @@ class UserInput extends Component {
     return (
       <div>
         <form className="Course_Input" onSubmit={this.props.handleSubmit}>
-          <input type="text" name="" placeholder='Duration (in months)'/>
-          <input type="text" name="" placeholder='Fee'/>
-          <select>
+
+          {/* Duration */}
+          <input type="text"
+          placeholder='Duration (in months)'
+          onChange={this.props.readDuration}
+          />
+
+          {/* Fee */}
+          <input type="text"
+          placeholder='Fee'
+          onChange={this.props.readFee}
+          />
+
+          {/* Course Select */}
+          <select onChange={this.props.selectCourse}>
             <option value=''>Select Course</option>
             <option value='Python'>Python</option>
             <option value='PythonFs'>Python Full Stack</option>

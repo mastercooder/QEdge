@@ -14,12 +14,23 @@
     font-size: 20px;
     color: white;
 }
+
+
+.Cousre_Display{
+    margin: 0px 0px;
+}
 .Cousre_Display table{
     margin: auto auto;
     border: 3px solid black;   
+    /* background-color: black; */
 }
-.Cousre_Display td,
 .Cousre_Display th{
+    padding: 10px 50px;
+    font-size: 25px;
+    border: 3px solid black;
+    color: white;
+}
+.Cousre_Display td{
     border: 3px solid black;
     padding: 10px 50px;
     color: white;

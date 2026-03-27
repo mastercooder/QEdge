@@ -1,8 +1,75 @@
+*{
+    text-align: center;
+}
+
 .Parent{
     text-align: center;
     color: white;
+    margin: 10px;
 }
 .Parent_Heading{
     background-color: #282c34;
     padding: 20px;
+}
+.Parent_Data{
+    border: 5px solid black;
+    margin: auto auto;
+    font-size: 20px;
+    padding: 20px;
+}
+
+
+.Child{
+    margin: 10px;
+    margin-top: 30px;
+    border: 5px solid black;
+    padding: 10px;
+}
+.Child h3{
+    text-decoration: underline;
+    font-size: 25px;
+}
+
+.Child input{
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+.Child_Button{
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+}
+
+
+
+.ImgComp1{
+    border: 5px solic black;
+    margin: 10px;
+    margin-top: 30px;
+}
+.ImgComp1 img{
+    width: 200px;
+    height: 150px;
+    margin: 20px;
+    border: 5px solid black;
+    background-size: contain;
+}
+
+
+
+
+.ImgComp2{
+    border: 5px solid black;
+    margin: 10px;
+    margin-top: 30px;
+}
+.img2{
+    width: 200px;
+    height: 150px;
+    margin: 20px;
+    border: 5px solid black;
+    background-size: contain;
 }

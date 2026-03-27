@@ -14,6 +14,7 @@ import FragComp1 from "./components/pages/FragComp1";
 import Contax101 from "./components/pages/Context101";
 import CallApi from "./components/pages/CallApi";
 import Parent from "./components/pages/Parent";
+import BsComp1 from "./components/pages/BsComp1";
 
 function App() {
   return (
@@ -62,7 +63,9 @@ function App() {
         |{" "}
         <Link to="/parent" className="nav-link">
           Parent
-        </Link>
+        </Link>{" "}
+        |{" "}
+        <Link to="/bscomp" className="nav-link">BsComp</Link>
       </nav>
 
       <Routes>
@@ -149,8 +152,11 @@ function App() {
         {/* CALL API */}
         <Route path="/callapi" element={<CallApi />} />
 
-        {/* PARENT | CHILD */}
+        {/* PARENT | CHILD | IMGCOMP1 | IMGCOMP2*/}
         <Route path="/parent" element={<Parent/>} />
+
+        {/* BOOTSTRAP COMPONENET */}
+        <Route path="/bscomp" element={<BsComp1/>} />
       </Routes>
     </div>
   );
