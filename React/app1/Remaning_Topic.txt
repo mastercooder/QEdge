@@ -7,15 +7,15 @@ React Fragmentation
 
 ContaxtAPI
 fetch - call API
+method - ComponenetDidMount
+Images
+bootstrap
 
 
             TOPICS NOT COVERED
            ====================
 
 
-method - ComponenetDidMount
-Images
-bootstrap
 callBack request
 Error Boundaries
 
