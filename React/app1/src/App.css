@@ -6,15 +6,30 @@
   font-weight: bolder;
 }
 
-.navbar{
-  margin: 10px 0px;
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin: 10px 20px;
   font-size: 20px;
-  text-align: center;
-  padding-top: 10px;
 }
-.nav-link{
+
+.nav-link {
   color: white;
   text-decoration: none;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  background: #444;
+  border-radius: 5px;
+}
+
+.nav-link:not(:last-child)::after {
+  content: "|";
+  margin-left: 10px;
+  color: gray;
 }
 
 .App-header {

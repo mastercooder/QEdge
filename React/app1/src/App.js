@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 import Comp1 from "./components/pages/Comp1";
 import Comp2 from "./components/pages/Comp2";
@@ -15,6 +16,9 @@ import Contax101 from "./components/pages/Context101";
 import CallApi from "./components/pages/CallApi";
 import Parent from "./components/pages/Parent";
 import BsComp1 from "./components/pages/BsComp1";
+import CallBackRefComp1 from "./components/pages/CallBackRefComp1";
+import ErrorBound1 from "./components/pages/ErrorBound1";
+
 
 function App() {
   return (
@@ -23,49 +27,46 @@ function App() {
       <nav className="navbar">
         <Link to="/" className="nav-link">
           Home
-        </Link>{" "}
-        |{" "}
+        </Link>
         <Link to="/student" className="nav-link">
           Student
-        </Link>{" "}
-        |{" "}
+        </Link>
         <Link to="/styleComp" className="nav-link">
           StyleComp
-        </Link>{" "}
-        |{" "}
+        </Link>
         <Link to="/readtext" className="nav-link">
           ReadText
-        </Link>{" "}
-        |{" "}
+        </Link>
         <Link to="/condrend" className="nav-link">
           CondRend
-        </Link>{" "}
-        |{" "}
+        </Link>
         <Link to="/assignment1" className="nav-link">
           Assignments
-        </Link>{" "}
-        |{" "}
+        </Link>
         <Link to="/course" className="nav-link">
           Course Details
-        </Link>{" "}
-        |{" "}
+        </Link>
         <Link to="/fragComp" className="nav-link">
           FragComp
-        </Link>{" "}
-        |{" "}
+        </Link>
         <Link to="/contaxt" className="nav-link">
           Contaxt
-        </Link>{" "}
-        |{" "}
+        </Link>
         <Link to="/callapi" className="nav-link">
           CallApi
-        </Link>{" "}
-        |{" "}
+        </Link>
         <Link to="/parent" className="nav-link">
           Parent
-        </Link>{" "}
-        |{" "}
-        <Link to="/bscomp" className="nav-link">BsComp</Link>
+        </Link>
+        <Link to="/bscomp" className="nav-link">
+          BsComp
+        </Link>
+        <Link to="/callbackrefcomp" className="nav-link">
+          CallBackRefComp
+        </Link>
+        <Link to="/errorbound" className="nav-link">
+          ErrorBound
+        </Link>
       </nav>
 
       <Routes>
@@ -153,10 +154,16 @@ function App() {
         <Route path="/callapi" element={<CallApi />} />
 
         {/* PARENT | CHILD | IMGCOMP1 | IMGCOMP2*/}
-        <Route path="/parent" element={<Parent/>} />
+        <Route path="/parent" element={<Parent />} />
 
         {/* BOOTSTRAP COMPONENET */}
-        <Route path="/bscomp" element={<BsComp1/>} />
+        <Route path="/bscomp" element={<BsComp1 />} />
+
+        {/* CALLBACK REFERENCE COMPOUND */}
+        <Route path="/callbackrefcomp" element={<CallBackRefComp1 />} />
+
+        {/* ERROR BOUNDRIES */}
+        <Route path="errorbound" element={<ErrorBound1 />} />
       </Routes>
     </div>
   );

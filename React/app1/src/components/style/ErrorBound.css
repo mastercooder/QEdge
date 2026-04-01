@@ -1,0 +1,11 @@
+.errorBound h1 {
+  background-color: #282c34;
+  padding: 20px;
+}
+
+.errorBound img {
+  width: 250px;
+  height: 200px;
+  border: 5px solid black;
+  background-size: contain;
+}
