@@ -1,0 +1,15 @@
+.nav-link{
+  font-size: 20px;
+}
+.nav-link:not(:last-child)::after {
+  content: "|";
+  margin-left: 10px;
+  color: rgb(13, 13, 28);
+}
+
+
+
+.AppHeader{
+  background-color: #09132b;
+  padding: 20px;
+}

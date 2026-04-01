@@ -1,0 +1,34 @@
+.Fcomp1Header{
+  background-color: #09132b;
+  padding: 20px;
+}
+
+
+.Fcomp2,
+.Fcomp3,
+.Fcomp4,
+.Fcomp5{
+  border: 5px solid black;
+}
+
+.Fcomp6Header{
+  background-color: #09132b;
+  padding: 20px;
+}
+
+
+.Fcomp6 input,
+.Fcomp6 button{
+  padding: 5px;
+}
+
+.Fcomp6 ul{
+  list-style-type: none;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+.Fcomp7,
+.Fcomp8{
+  border: 5px solid black;
+}
