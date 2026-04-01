@@ -4,7 +4,7 @@ import '../css/Navbar.css'
 const Navbar = () => {
   return (
     <>
-      <ul>
+      <ul className='d-flex align-items-center'>
         {/* <li><NavLink to="/" style={{backgroundColor:"red"}}>Home</NavLink></li> */}
         <li><NavLink to="/" style={({isActive})=>{return {backgroundColor: isActive ? 'aqua' : ''}}}>Home</NavLink></li>
         <li><NavLink to="/about" style={({isActive})=>{return {backgroundColor: isActive ? 'aqua' : ''}}}>About</NavLink></li>

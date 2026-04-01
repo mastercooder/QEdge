@@ -1,11 +1,14 @@
 import React from 'react'
 import { useParams,useSearchParams } from 'react-router-dom';
 import CourseBar from '../CourseBar';
+import '../../css/Course.css'
+
 const Course = () => {
   let {course,cid} = useParams();
   let [searchParams,setSearchParams] = useSearchParams();
   console.log(searchParams);
   console.log(searchParams.get("cid"));
+
   return (
     <div>
       <CourseBar />
