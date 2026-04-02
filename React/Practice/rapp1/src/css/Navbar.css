@@ -1,5 +1,5 @@
 .Navbar ul {
-  border: 2px solid blue;
+  border: 2px solid blue;  
   background-color: rgba(9, 9, 188, 0.5);
   width: 90%;
   height: 70px;
@@ -21,12 +21,10 @@
 }
 
 .NavLeft{
-    /* border: 1px solid white; */
     width: 70%;
     display: flex;
 }
 .NavRight{
-    /* border: 1px solid white; */
     width: 30%;
     float: right;
 }
@@ -42,6 +40,7 @@
   box-sizing: 0 0 10px red;
   transition: all .40s ease;
   margin: 10px;
+  box-shadow: 0 0 20px gray;
 }
 
 .Navbar ul li a{

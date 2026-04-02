@@ -1,50 +1,65 @@
-.Course ul{
-    font-size: 20px;
+.Course ul {
+  font-size: 20px;
 }
 
 .UserInput input,
-.UserInput button{
-    margin-right: 20px;
-    padding: 10px 20px;
-    font-size: 20px;
-    border: 3px solid black;
+.UserInput button {
+  margin-right: 20px;
+  padding: 10px 20px;
+  font-size: 20px;
+  transition: all 0.3s ease;
 }
 
-.UserInput input::placeholder,
-.UserInput button::placeholder{
-    color: black;
+.UserInput button {
+  border-radius: 20px;
 }
 
-.DisplayData{
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
+.UserInput button:last-child {
+  background-color: rgb(29, 61, 26);
+  color: white;
+}
+.UserInput button:nth-last-child(2) {
+  background-color: rgb(230, 201, 38);
 }
 
-.DisplayData table{
-    width: 100%;
-    padding: 10px;
-    background-color: rgb(129, 63, 75);
+.UserInput button:last-child:hover,
+.UserInput button:nth-last-child(2):hover {
+  box-shadow: 0 0 10px gold;
+  transform: scale(1.05);
+}
+
+.UserInput input::placeholder {
+  color: black;
+  opacity: 0.5;
+}
+
+.DisplayData {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.DisplayData table {
+  width: 100%;
+  padding: 10px;
+  background-color: rgb(129, 63, 75);
 }
 
 .DisplayData table th,
-.DisplayData table td{
-    border: 5px solid black;
-    padding: 10px 50px;
-    text-align: center;
-    font-size: 20px;
+.DisplayData table td {
+  border: 5px solid black;
+  padding: 10px 50px;
+  text-align: center;
+  font-size: 20px;
 }
-
-
-
 
 /* ============================
             CourseBar
  ============================= */
 
-.CourseBar ul{
-    list-style-type: none;
+.CourseBar ul {
+  list-style-type: none;
 }
-.CourseBar ul li{
-    padding-right: 20px;
+.CourseBar ul li {
+  padding-right: 20px;
 }

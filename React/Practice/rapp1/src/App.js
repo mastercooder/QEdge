@@ -10,6 +10,8 @@ import Signup from './components/pages/Signup';
 import Error from './components/pages/Error';
 import Course from './components/pages/Course';
 import Navbar from './components/Navbar';
+import { useLocation } from "react-router-dom";
+
 
 function App() {
   return (
