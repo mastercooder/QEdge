@@ -1,0 +1,67 @@
+.Login{
+    height: 50vh;
+    border: 2px solid rgb(118, 118, 213);
+    border-radius: 20px;
+    margin: 50px auto;
+    width: 45vh;
+    padding: 30px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    transition: all 0.3s ease;
+}
+.Login:hover{
+    box-shadow: 0 0 10px rgb(118, 118, 213);
+}
+
+.Login h3{
+    font-size: 2.5rem;
+}
+
+.LoInput label,
+.LoInput input{
+    width: 100%;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+.LoInput input{
+    padding: 5px;
+
+}
+.LoInput label{
+    margin-top: 20px;
+}
+
+.LoButton{
+    /* border: 2px solid white; */
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.LoButton input{
+    padding: 2px;
+    font-size: 20px;
+    width: 45%;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.LoButton input:first-child{
+    background-color: gold
+}
+
+.LoButton input:last-child{
+    background-color: rgb(128, 128, 128);
+    color: white;
+}
+
+.LoButton input:first-child:hover,
+.LoButton input:last-child:hover{
+    box-shadow: 0 0 5px aliceblue;
+    transform: scale(1.05)
+}
+

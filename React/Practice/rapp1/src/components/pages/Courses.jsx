@@ -20,7 +20,7 @@ const Courses = () => {
   };
 
   const addCourse = () => {
-    if (!form.course) return;
+    if (!form.course || !form.duration || !form.fee || !form.trainer) return;
     setCourse([...course, form]);
     setForm({
       course: "",

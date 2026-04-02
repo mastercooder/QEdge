@@ -1,0 +1,83 @@
+.SignUp{
+    border: 1px solid aliceblue;
+    border-radius: 30px;
+    width: 25%;
+    height: 65vh;
+
+    margin: 50px auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    
+    background-color: #1e1e1e;
+    color: white;
+    transition: box-shadow 0.3s ease;
+}
+
+.SignUp:hover{
+    box-shadow: 0 0 10px aliceblue;;
+}
+
+.SignUp h3{
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+/* INPUT SECTION */
+.SiInput{
+    width: 100%;
+}
+
+.SiInput label,
+.SiInput input{
+    width: 80%;
+    display: block;
+    margin: 8px auto; 
+}
+
+.SiInput input{
+    padding: 6px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+/* BUTTON SECTION */
+.SiButton{
+    width: 80%;
+    margin: 20px auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.SiButton button{
+    width: 40%;
+    padding: 6px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+/* Optional styling for better UI */
+.SiButton button:first-child{
+    background-color: goldenrod;
+    color: black;
+}
+
+.SiButton button:last-child{
+    background-color: gray;
+    color: white;
+}
+
+/* Hover Effects */
+.SiButton button:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 10px goldenrod;
+}

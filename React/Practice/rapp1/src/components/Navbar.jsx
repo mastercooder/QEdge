@@ -1,25 +1,56 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom';
-import '../css/Navbar.css'
+import React from "react";
+import { NavLink } from "react-router-dom";
+import "../css/Navbar.css";
+
 const Navbar = () => {
+  const getClass = ({ isActive }) =>
+    isActive ? "nav-link active p-2" : "nav-link p-1";
+
   return (
-    <>
-      <ul className='d-flex align-items-center'>
-        {/* <li><NavLink to="/" style={{backgroundColor:"red"}}>Home</NavLink></li> */}
-        <li><NavLink to="/" style={({isActive})=>{return {backgroundColor: isActive ? 'aqua' : ''}}}>Home</NavLink></li>
-        <li><NavLink to="/about" style={({isActive})=>{return {backgroundColor: isActive ? 'aqua' : ''}}}>About</NavLink></li>
-        <li><NavLink to="/contact" style={({isActive})=>{return {backgroundColor: isActive ? 'aqua' : ''}}}>Contact</NavLink></li>
-        <li><NavLink to="/courses" style={({isActive})=>{return {backgroundColor: isActive ? 'aqua' : ''}}}>Courses</NavLink></li>
-        <li className='last'><NavLink to="/signup" style={({isActive})=>{return {backgroundColor: isActive ? 'aqua' : ''}}}>SignUp</NavLink></li>
-        <li className='last'><NavLink to="/login" style={({isActive})=>{return {backgroundColor: isActive ? 'aqua' : ''}}}>Login</NavLink></li>
+    <div className="Navbar">
+      <ul className="d-flex align-items-center">
+        <div className="NavLeft">
+          <li>
+            <NavLink to="/" className={getClass}>
+              Home
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink to="/about" className={getClass}>
+              About
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink to="/contact" className={getClass}>
+              Contact
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink to="/courses" className={getClass}>
+              Courses
+            </NavLink>
+          </li>
+        </div>
+
+        <div className="NavRight">
+          <li className="last">
+            <NavLink to="/signup" className={getClass}>
+              SignUp
+            </NavLink>
+          </li>
+
+          <li className="last">
+            <NavLink to="/login" className={getClass}>
+              Login
+            </NavLink>
+          </li>
+        </div>
       </ul>
-      {/* <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/about">About</Link></li>
-        <li><Link to="/contact">Contact</Link></li>
-      </ul> */}
-    </>
-  )
-}
+    </div>
+  );
+};
 
 export default Navbar;
