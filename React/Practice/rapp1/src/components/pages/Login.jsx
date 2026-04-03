@@ -1,10 +1,18 @@
 import React from 'react'
 import '../../css/login.css'
+import { useLocation } from 'react-router-dom'
+
 
 const Login = () => {
+  
+  const location = useLocation();
+
   return (
     <div className='Login mt-5'>
-      <h3 className='text-center'>Login</h3>
+      <h3 className='text-center'>
+        Login 
+      </h3>
+      <p className='login-status mb-1'>{location.state?.loginStatus}</p>
 
       <div className='LoInput'>
         <form>

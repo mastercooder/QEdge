@@ -36,6 +36,12 @@ const Navbar = () => {
         </div>
 
         <div className="NavRight">
+          <li>
+            <NavLink to="/dashboard" className={getClass}>
+              Dashboard
+            </NavLink>
+          </li>
+          
           <li className="last">
             <NavLink to="/signup" className={getClass}>
               SignUp

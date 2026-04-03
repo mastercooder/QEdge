@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Home from './components/pages/Home';
@@ -11,9 +11,17 @@ import Error from './components/pages/Error';
 import Course from './components/pages/Course';
 import Navbar from './components/Navbar';
 import { useLocation } from "react-router-dom";
+import Dashboard from './components/pages/Dashboard';
+import Logout from './components/pages/Logout';
 
 
 function App() {
+
+  let isLogedin = true;
+  let data = {
+    "loginStatus": "User must login to get dashbord"
+  }
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -25,7 +33,9 @@ function App() {
           <Route exact path='/courses' element={<Courses />} />
           <Route exact path='/courses/:course' element={<Course />} />
           <Route exact path='/courses/:course/:cid' element={<Course />} />
-          <Route exact path='/Login' element={<Login />} />
+          <Route exact path='/Logout' element={<Logout />} />
+          <Route exact path='/Dashboard' element={isLogedin ? <Dashboard/> : <Navigate to="/Login" replace state={data}/>} />
+          <Route exact path='/Login' element={<Login/>} />
           <Route exact path='/Signup' element={<Signup />} />
           <Route exact path='*' element={<Error />} />
         </Routes>
