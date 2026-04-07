@@ -1,5 +1,5 @@
 import React from 'react'
-import '../style/coursebar.css'
+import '../assets/style/coursebar.css'
 
 const CourseBar = () => {
   return (

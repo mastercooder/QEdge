@@ -1,5 +1,5 @@
 import React from "react";
-import "../style/course.css";
+import '../assets/style/course.css'
 import { useState } from "react";
 import CourseBar from "../components/CourseBar";
 

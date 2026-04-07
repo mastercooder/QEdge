@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-import Navbar from './components/Navbar';
+import Navbar from './components/common/Navbar';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import CourseGallery from './pages/CourseGallery';
