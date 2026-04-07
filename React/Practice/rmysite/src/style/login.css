@@ -1,0 +1,64 @@
+.Login{
+    border: 5px solid rgb(4, 4, 17);
+    border-radius: 1rem;
+
+    width: 50vh;
+    margin-left: auto;
+    margin-right: auto;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    transition: all 0.3s ease;
+}
+.Login:hover{
+    box-shadow: 0 0 10px rgb(4, 4, 17);
+}
+
+
+.LoginInput{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 1rem 2rem;
+}
+
+.LoginInput label{
+    margin-top: 10px;
+}
+
+.LoginInput input{
+    border-radius: 0.5rem;
+    padding: 5px;
+}
+
+.LoginButton{
+    width: 90%;
+    flex-direction: row;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.LoginButton button{
+    width: 40%;
+    margin: 1rem;
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+
+    transition: all 0.3s ease;
+}
+
+.LoginButton button:first-child{
+    background-color: yellowgreen;
+}
+.LoginButton button:last-child{
+    background-color: brown;
+    color: white;
+}
+.LoginButton button:first-child:hover,
+.LoginButton button:last-child:hover{
+    box-shadow: 0 0 10px yellowgreen;
+    transform: scale(1.05);
+}

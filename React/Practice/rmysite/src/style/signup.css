@@ -1,0 +1,56 @@
+.SignUp{
+    border: 5px solid rgb(4, 4, 17);
+    border-radius: 1rem;
+
+    width: 28vw;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    transition: all 0.3s ease;
+}
+.SignUp:hover{
+    box-shadow: 0 0 10px rgb(4, 4, 17);
+}
+
+.SignupInput{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.SignupInput label,
+.SignupInput input{
+    width: 90%;
+    border-radius: 0.5rem;
+    padding: 0.3rem;
+}
+
+
+.SignupButton{
+    width: 90%;
+    display: flex;
+    justify-content: space-between
+}
+.SignupButton button{
+    width: 45%;
+    padding: 0.4rem;
+    border-radius: 0.5rem;
+
+    transition: all 0.3s ease;
+}
+
+.SignupButton button:first-child{
+    background-color: yellowgreen;
+}
+.SignupButton button:last-child{
+    background-color: brown;
+    color: white;
+}
+
+.SignupButton button:first-child:hover,
+.SignupButton button:last-child:hover{
+    box-shadow: 0 0 10px yellowgreen;
+    transform: scale(1.05);
+}

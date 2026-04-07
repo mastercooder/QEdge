@@ -1,0 +1,44 @@
+/* .Navbar{
+    border: 3px solid black;
+    
+} */
+
+.Navbar ul {
+  list-style-type: none;
+  border: 2px solid rgb(8, 8, 40);
+  background-color: rgb(8, 8, 40);
+
+  width: 90%;
+  height: 7vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.NavLeft {
+  display: flex;
+}
+.Navbar a {
+  text-decoration: none;
+  color: white;
+  padding: 0.4rem;
+}
+.NavRight {
+  display: flex;
+  margin-right: 1rem;
+}
+
+.NavLeft li,
+.NavRight li {
+  padding-right: 1rem;
+}
+
+.active {
+  background-color: red;
+  border-radius: 0.5rem;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 10px red;
+}

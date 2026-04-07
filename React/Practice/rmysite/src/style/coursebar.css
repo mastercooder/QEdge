@@ -1,0 +1,11 @@
+.CourseBar ul{
+    list-style-type: none;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.CourseBar ul li{
+    padding-right: 1rem;
+}
