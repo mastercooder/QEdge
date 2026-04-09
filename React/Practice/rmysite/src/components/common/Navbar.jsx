@@ -5,7 +5,7 @@ import '../../assets/style/Navbar.css'
 
 const Navbar = () => {
   const getClass = ({ isActive }) =>
-    isActive ? 'nav-link active p-2': 'nav-link p-1'
+    isActive ? 'nav-link active': 'nav-link'
 
 
   return (
@@ -13,24 +13,29 @@ const Navbar = () => {
         <ul>
           <div className="NavLeft">
             <li>
-              <NavLink to="/">
+              <NavLink to="/" className={getClass}>
                 Home
               </NavLink>
             </li>
             <li>
-              <NavLink to="/course">
+              <NavLink to="/course" className={getClass} >
                 Course
               </NavLink>
             </li>
           </div>
           <div className="NavRight">
               <li>
-                <NavLink to="/singup">
+                <NavLink to="/dashboard" className={getClass} >
+                  Dashboard
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/singup" className={getClass} >
                   SingUp
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/login">
+                <NavLink to="/login" className={getClass} >
                   Login
                 </NavLink>
               </li>
