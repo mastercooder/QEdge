@@ -1,0 +1,8 @@
+1001,ravi,python,3500
+1002,kumar,java,4000
+1003,hari,react,3500
+1004,varma,python,4500
+1005,koti,Python,3600
+1006,venkat,JAVA,4700
+1007,preetham,django,5300
+1008,singh,PYTHON,4600

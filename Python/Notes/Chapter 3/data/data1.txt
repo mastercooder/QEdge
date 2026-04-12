@@ -1,0 +1,7 @@
+welcome to python coding
+python is very good for AI applications
+java script
+django
+java
+reactjs
+nextjs
