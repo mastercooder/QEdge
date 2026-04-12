@@ -1,5 +1,3 @@
-CID | Name | Course | Fee Paid
-===============================
 1001,tejesh,python,3500
 1002,patel,java,4000
 1003,hari,react,3500

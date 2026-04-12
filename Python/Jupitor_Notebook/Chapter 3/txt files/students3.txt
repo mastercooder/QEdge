@@ -1,0 +1,10 @@
+101,kumar,java,6700
+102,hari,python,7700
+101,kumar,java,6700
+102,hari,python,7700
+103,varma,react,8000
+104,giri,django,6500
+101,kumar,java,6700
+102,hari,python,7700
+103,varma,react,8000
+104,giri,django,6500
