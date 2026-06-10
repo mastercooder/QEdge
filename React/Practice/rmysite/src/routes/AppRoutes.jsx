@@ -23,8 +23,8 @@ function AppRoutes(){
 
             // Student Layout
             <Route path="/student" element={<StudentLayout/>}>
-                <Route path="/dashboard" element={<Dashboard/>}/>
-                <Route path="/courses" element={<Courses/>}/>
+                <Route path="dashboard" element={<Dashboard/>}/>
+                <Route path="courses" element={<Courses/>}/>
             </Route>
         </Routes>
     )

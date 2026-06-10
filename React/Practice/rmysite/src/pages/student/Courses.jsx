@@ -1,6 +1,6 @@
 import React from 'react'
 import CourseCard from '../../components/student/CourseCard'
-import { courses } from '../../data/CourseData'
+import { course } from '../../data/CourseData'
 
 
 const Course = () => {
@@ -8,8 +8,8 @@ const Course = () => {
     <div>
       <h3>List of Courses</h3>
       {
-        courses.map((course)=>{
-          <CourseCard key={courses.cid} course = {course}/>
+        course.map((course)=>{
+          <CourseCard key={course.cid} course = {course}/>
         })
       }
     </div>
