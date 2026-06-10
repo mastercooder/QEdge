@@ -6,6 +6,8 @@ import CourseGallery from '../pages/CourseGallery';
 import Dashboard from '../pages/student/Dashboard';
 import CourseDetails from "../pages/student/CourseDetails";
 import AdminDashboard from '../pages/admin/AdminDashboard'
+import StudentLayout from "../layout/StudentLayout";
+import Courses from "../pages/student/Courses";
 
 function AppRoutes(){
     return (
@@ -17,6 +19,13 @@ function AppRoutes(){
             <Route path="/course" element={<CourseGallery/>} />
             <Route path="/course/:cid" element={<CourseDetails/>} />
             <Route path="/admindashboard" element={<AdminDashboard/>} />
+            <Route path="/studentlayout" element={<StudentLayout/>}/>
+
+            // Student Layout
+            <Route path="/student" element={<StudentLayout/>}>
+                <Route path="/dashboard" element={<Dashboard/>}/>
+                <Route path="/courses" element={<Courses/>}/>
+            </Route>
         </Routes>
     )
 }

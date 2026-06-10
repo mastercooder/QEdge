@@ -1,38 +1,37 @@
 import React from "react";
-import '../assets/style/course.css'
+import '../style/courseGallary.css'
 import { useState } from "react";
-import CourseBar from "../components/CourseBar";
 
 const CourseGallery = () => {
-  const [form, setForm] = useState({
-    course: "",
-    duration: "",
-    fee: "",
-    trainer: "",
+  const [form, setFrom] = useState({
+    course: '',
+    duration: '',
+    fee: '',
+    trainer: '',
   });
 
   const [course, setCourse] = useState([]);
 
-  const handChange = (e) => {
-    setForm({
+  const handChange = ( e) =>{
+    setFrom({
       ...form,
       [e.target.name]: e.target.value,
     });
-  };
+  }
 
-  const addCourse = (e) => {
+  const addCourse = (e) =>{
     if(!form.course || !form.duration || !form.fee || !form.trainer) return;
     setCourse([...course, form]);
-    setForm({
-      course: "",
-      duration: "",
-      fee: "",
-      trainer: "",
+    setFrom({
+      course: '',
+      duration: '',
+      fee: '',
+      trainer: '',
     });
-  };
+  }
 
   const clearCourse = () =>{
-    setForm({
+    setFrom({
       course: '',
       duration: '',
       fee: '',
@@ -43,7 +42,6 @@ const CourseGallery = () => {
   return (
     <div className="Course">
       <h3 className="text-center mt-3">Course</h3>
-      <CourseBar/>
 
       <div className="userInput mt-5">
         <input
@@ -88,10 +86,10 @@ const CourseGallery = () => {
             <th>Trainer</th>
           </thead>
           <tbody>
-            {course.map((cr, index) => {
-              return (
+            {course.map((cr, index) =>{
+              return(
                 <tr key={index}>
-                  <td>{index + 1}</td>
+                  <td>{index+1}</td>
                   <td>{cr.course}</td>
                   <td>{cr.duration}</td>
                   <td>{cr.fee}</td>

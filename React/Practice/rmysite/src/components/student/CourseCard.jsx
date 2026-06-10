@@ -1,8 +1,14 @@
 import React from 'react'
+import Course from '../../pages/student/Courses';
 
-const CourseCard = () => {
+const CourseCard = ({Course}) => {
   return (
-    <div>CourseCard</div>
+    <div>
+      <h3>{Course.title}</h3>
+      <p>{Course.dur}</p>
+      <p>{Course.fee}</p>
+      <h3>{Course.trainer}</h3>
+    </div>
   )
 }
 
