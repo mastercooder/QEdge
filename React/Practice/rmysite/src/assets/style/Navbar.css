@@ -45,3 +45,11 @@
   box-shadow: 0 0 10px red;
   color: white;
 }
+
+.Navbar a:focus,
+.Navbar a:focus-visible{
+  outline: none;
+  border: none;
+  box-shadow: 0 0 20px red;
+  color: white;
+}

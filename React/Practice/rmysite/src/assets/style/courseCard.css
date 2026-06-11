@@ -1,0 +1,12 @@
+
+
+.courseCard{
+    border: 1px solid black;
+    border-radius: 10px;
+    float: left;
+    transition: 0.3s ease;
+}
+
+.courseCard:hover{
+    transform: scale(1.1);
+}

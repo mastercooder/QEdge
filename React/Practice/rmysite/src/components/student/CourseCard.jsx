@@ -1,13 +1,16 @@
 import React from 'react'
-import Course from '../../pages/student/Courses';
+import course from '../../pages/student/Courses';
+import { Link } from 'react-router-dom';
+import '../../assets/style/courseCard.css'
 
-const CourseCard = ({Course}) => {
+const CourseCard = ({course}) => {
   return (
-    <div>
-      <h3>{Course.title}</h3>
-      <p>{Course.dur}</p>
-      <p>{Course.fee}</p>
-      <h3>{Course.trainer}</h3>
+    <div className='courseCard p-3 m-3'>
+      <h3>{course.title}</h3>
+      <p>{course.dur}</p>
+      <p>{course.fee}</p>
+      <h3>{course.trainer}</h3>
+      <Link to={`/student/course/${course.cid}`}>View Course</Link>
     </div>
   )
 }
