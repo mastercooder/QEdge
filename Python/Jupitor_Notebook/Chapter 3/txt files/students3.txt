@@ -1,10 +1,11 @@
-101,kumar,java,6700
-102,hari,python,7700
-101,kumar,java,6700
-102,hari,python,7700
-103,varma,react,8000
-104,giri,django,6500
-101,kumar,java,6700
-102,hari,python,7700
-103,varma,react,8000
-104,giri,django,6500
+
+101, Tejesh, Java, 6700
+102, Jayesh, Python, 7000
+103, Tushar, HTML, 3000
+104, Kumar, React, 8000
+105, Ramesh, FastAPI, 10000
+101, Tejesh, Java, 6700
+102, Jayesh, Python, 7000
+103, Tushar, HTML, 3000
+104, Kumar, React, 8000
+105, Ramesh, FastAPI, 10000

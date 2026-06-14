@@ -9,3 +9,4 @@
 1009,pradip,java scripts,5000
 1010,rahul,python,4200
 1011,kumar,java,6700
+1012, patel, react, 8000

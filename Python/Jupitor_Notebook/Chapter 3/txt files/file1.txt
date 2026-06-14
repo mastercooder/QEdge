@@ -1,1 +1,8 @@
-Good Morning
+Welcome to Python Coding
+django
+aws
+react
+nextjs
+java
+javascripts
+FastAPI
