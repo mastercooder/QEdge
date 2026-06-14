@@ -1,0 +1,10 @@
+python,12000,6 Months,Ramesh Kumar,Online,Beginner to Advanced
+java,15000,8 Months,Suresh Reddy,Offline,Beginner to Advanced
+react,10000,4 Months,Ankit Sharma,Online,Frontend Development
+django,13000,5 Months,Priya Verma,Hybrid,Backend Development
+java scripts,9000,3 Months,Rohit Singh,Online,Web Development
+fastapi,11000,3 Months,Amit Patel,Online,API Development
+mysql,7000,2 Months,Kiran Rao,Offline,Database Management
+html css,5000,2 Months,Deepak Yadav,Online,Frontend Basics
+c++,14000,6 Months,Vinay Gupta,Offline,Programming Fundamentals
+data science,25000,10 Months,Neha Agarwal,Hybrid,Machine Learning
