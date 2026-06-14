@@ -1,0 +1,30 @@
+1001,tejesh,python,3500
+1002,patel,java,4000
+1003,hari,react,3500
+1004,varma,python,12000
+1005,koti,Python,3600
+1006,venkat,JAVA,4700
+1007,preetham,django,5300
+1008,singh,PYTHON,4600
+1009,pradip,java scripts,5000
+1010,rahul,python,4200
+1011,anita,java,3900
+1012,rohit,react,4100
+1013,meena,django,4800
+1014,akash,python,5200
+1015,sneha,java scripts,4300
+1016,deepak,python,4600
+1017,pooja,react,3700
+1018,amit,django,5500
+1019,neha,java,4400
+1020,vijay,python,3900
+1021,karan,java scripts,5100
+1022,rina,react,4200
+1023,manoj,django,4700
+1024,divya,python,5300
+1025,arjun,java,4500
+1026,kavya,react,4000
+1027,harish,django,5600
+1028,nikhil,python,4800
+1029,suman,java scripts,4300
+1030,lavanya,react,4600
