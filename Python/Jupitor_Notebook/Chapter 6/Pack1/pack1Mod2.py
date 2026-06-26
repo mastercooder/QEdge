@@ -1,8 +1,5 @@
-m = 500
-_n = 600
-
-def f11():
-    return 'm1 of module mod1'
+def f22():
+    return 'f22 function if module pack1Mod2'
 
 def wish(msg):
     return msg
