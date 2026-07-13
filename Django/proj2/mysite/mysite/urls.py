@@ -16,7 +16,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.http import HttpResponse
+
+def index(request):
+    return HttpResponse("<h1>Django App Development...</h1>")
+
+def course(request):
+    return HttpResponse("<h1>Course Page...</h1>")
+
+def student(request):
+    return HttpResponse("<h1>Student Page...</h1>")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("", index),
+    path("course", course),
+    path("student", student)
 ]
