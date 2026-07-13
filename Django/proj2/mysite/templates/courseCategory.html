@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django:courseCategory</title>
+    <link rel="stylesheet" href="{% static 'css/courseCategory.css' %}">
+</head>
+<body>
+    <h1>{{msg}}</h1>
+    <h3>
+        <ul>
+            {% for course in courses %}
+                <li>
+                    <a href="">{{course}}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </h3>
+</body>
+</html>

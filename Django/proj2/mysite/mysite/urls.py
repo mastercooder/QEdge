@@ -16,12 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app1.views import index, course, student, trainer
+from app1.views import index, course, student, trainer, courseAdmin, courseCategory
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", index),
-    path("course", course),
-    path("student", student),
-    path('trainer', trainer)
+    path("", index),                         #http://127.0.0.1:8000/
+    path("course", course),                  #http://127.0.0.1:8000/course
+    path("student", student),                #http://127.0.0.1:8000/student
+    path('trainer', trainer),                #http://127.0.0.1:8000/trainer
+    path('courseAdmin', courseAdmin),        #http://127.0.0.1:8000/courseAdmin
+    path('courseCategory', courseCategory)   #http://127.0.0.1:8000/courseCategory
 ]

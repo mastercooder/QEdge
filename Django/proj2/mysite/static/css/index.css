@@ -1,0 +1,10 @@
+header,footer{
+    text-align: center;
+    background-color: aqua;
+    text-align: center;
+    color: red;
+}
+main{
+    color: blue;
+    text-align: center;
+}
