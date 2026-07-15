@@ -1,0 +1,6 @@
+# Python Temp Files
+__pycache__/
+*.pyc
+
+# DataBase File's
+db.sqlite3

@@ -1,0 +1,19 @@
+*{
+    text-align: center;
+}
+
+header{
+    text-decoration: underline;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+header a{
+    padding-right: 10px;
+}
+
+main{
+    background-color: lightblue;
+}
+
+footer{
+    background-color: yellow;
+}

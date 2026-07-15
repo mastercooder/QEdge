@@ -1,0 +1,16 @@
+header{
+    text-align: center;
+    background-color: antiquewhite;
+    color: red;
+}
+main{
+    text-align: center;
+    color: blue;
+}
+footer{
+    text-align: center;
+    background-color: aliceblue;
+    color: darkblue;
+    position: relative;
+    height: 150px;
+}
