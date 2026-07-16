@@ -3,4 +3,9 @@ from django.shortcuts import render
 # Create your views here.
 
 def trainer(request):
-    return render(request, 'trainer/trainer.html')
+    context = {'msg': 'This is the Trainer Main Page'}
+    return render(request, 'trainer/trainer.html', context)
+
+def trainerIdPage(request,lid):
+    context = {'msg': 'This it Trainer Information Page', 'lid':lid}
+    return render(request, 'trainer/trainerPage.html', context)
