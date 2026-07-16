@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index:Django</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Web Application Development: Djnago</h1>
+        <a href="{% url 'index' %}">Home</a>
+        <a href="{% url 'app1:app1' %}">App1</a>
+        <a href="{% url 'app2:app2' %}">App2</a>
+    </header>
+    <main>
+        <h3><b>{{msg}} || {{title}}</b></h3>
+    </main>
+    <footer>
+        <h1>Thanks For Visiting</h1>
+    </footer>
+</body>
+</html>
