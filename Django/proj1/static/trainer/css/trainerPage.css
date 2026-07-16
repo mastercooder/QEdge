@@ -9,6 +9,9 @@ header{
 header a{
     padding-right: 10px;
 }
+header h1{
+    font-size: 50px;
+}
 
 main{
     background-color: lightgreen;

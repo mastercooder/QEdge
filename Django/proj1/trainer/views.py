@@ -7,5 +7,6 @@ def trainer(request):
     return render(request, 'trainer/trainer.html', context)
 
 def trainerIdPage(request,lid):
-    context = {'msg': 'This it Trainer Information Page', 'lid':lid}
+    trainerData = {101: 'Vankat', 102: 'Kiran', 103: 'Tejesh'}
+    context = {'msg': 'This it Trainer Information Page', 'trainerName': trainerData[lid]}
     return render(request, 'trainer/trainerPage.html', context)
