@@ -14,6 +14,19 @@
         <a href="{% url 'app1:app1' %}">App1</a>
         <a href="{% url 'app2:app2' %}">App2</a>
     </header>
+    <menu>
+        {% if appname == "app1" %}
+            <nav>
+                <a href="{% url 'app1:students' %}">Students</a>
+            </nav>
+        {% else %}
+            {% if appname == "app2" %}
+                <nav>
+                    <a href="{% url 'app2:trainer' %}">Trainer</a>
+                </nav>
+            {% endif %}
+        {% endif %}
+    </menu>
     <main>
         <h3><b>{{msg}} || {{title}}</b></h3>
     </main>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Student Dashboard</h1>
+        <table>
+            <th>#SNO</th>
+            <th>#SNAME</th>
+            {% for student in students %}
+            <tr>
+                <td>{{sid}}</td>
+                <td>{{student}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        
+        <a href="{% url 'index' %}">Home</a>
+        <a href="{% url 'app1:app1' %}">App1</a>
+        <a href="{% url 'app2:app2' %}">App2</a>
+    </header>
+    <main>
+        <h3>List of Students</h3>
+        <ul>
+            {% for student in students %}
+                <li>{{student}}</li>
+            {% empty %}
+                <h3>No Student Enrolled</h3>
+            {% endfor %}
+        </ul>
+    </main>
+    <footer>
+        <h3>Thanks for visiting My Site</h3>
+    </footer>
+</body>
+</html>
