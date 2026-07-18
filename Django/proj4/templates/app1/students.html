@@ -5,35 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Students</title>
-    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/students.css' %}">
 </head>
 <body>
     <header>
         <h1>Student Dashboard</h1>
+
+        <!-- <a href="{% url 'index' %}">Home</a>
+        <a href="{% url 'app1:app1' %}">App1</a>
+        <a href="{% url 'app2:app2' %}">App2</a> -->
+    </header>
+    <main>
+        <h3>List of Students {% now "jS F Y H:i" %}</h3>
         <table>
-            <th>#SNO</th>
-            <th>#SNAME</th>
-            {% for student in students %}
+            <th>SNO</th>
+            <th>SNAME</th>
+            {% for sid, sname in students %}
             <tr>
                 <td>{{sid}}</td>
-                <td>{{student}}</td>
+                <td>{{sname|capfirst}}</td>
             </tr>
             {% endfor %}
         </table>
-        
-        <a href="{% url 'index' %}">Home</a>
-        <a href="{% url 'app1:app1' %}">App1</a>
-        <a href="{% url 'app2:app2' %}">App2</a>
-    </header>
-    <main>
-        <h3>List of Students</h3>
-        <ul>
+        {% comment %} <ul>
             {% for student in students %}
                 <li>{{student}}</li>
             {% empty %}
                 <h3>No Student Enrolled</h3>
             {% endfor %}
-        </ul>
+        </ul> {% endcomment %}
     </main>
     <footer>
         <h3>Thanks for visiting My Site</h3>

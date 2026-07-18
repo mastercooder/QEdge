@@ -1,0 +1,41 @@
+*{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+header h1{
+    font-size: 50px;
+    font-family: cursive;
+    text-decoration: underline;
+    background-color: blue;
+    padding: 1rem;
+}
+
+main{
+    padding: 1rem;
+    background-color: lightblue;
+}
+main h3{
+    margin: 1rem;
+    text-decoration: underline;
+    font-size: 1.5rem;
+}
+main table{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.2rem;
+    border: 2px solid black;
+    background-color: bisque;
+}
+main table th,
+main table td{
+    border: 2px solid black;
+    padding: 1rem;
+    font-size: 1.2rem;
+}
+
+footer{
+    font-size: 30px;
+    background-color: darkgray;
+    padding: 1rem;
+}
