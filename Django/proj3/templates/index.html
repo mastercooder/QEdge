@@ -1,16 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{title}}</title>
-</head>
-<body>
-    <header>
-        <h1>{{msg}}</h1>
-    </header>
-    <main>
-        <a href="{% url app1:app1 %}">App1</a>
-    </main>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}
+    {{title}}
+{% endblock title %}
+
+{% block header %}
+    <h1>My Site App Development: {{msg}}</h1>
+{% endblock header %}
+
+{% block main %}
+    <h3>This is index Page</h3>
+    <h3>This is index Page</h3>
+    <h3>This is index Page</h3>
+{% endblock main %}

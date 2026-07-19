@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <title>
+        {% block title %}
+            MySite
+        {% endblock title %}  
+    </title>
+</head>
+<body>
+    <header>
+        {% block header %}
+            <h1>Django App Development</h1>
+        {% endblock header %}
+    </header>
+    <main>
+        {% block main %}
+            <h3>Base Page</h3>
+            <h3>Base Page</h3>
+            <h3>Base Page</h3>
+        {% endblock main %}
+    </main>
+    <footer>
+        {% block footer %}
+            <h1>Thanks</h1>
+        {% endblock footer %}
+    </footer>
+</body>
+</html>
