@@ -3,12 +3,5 @@
 
 {% block header %}
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
-    <div class="headerContainer">
-        <div>Flex1</div>
-        <div>Flex2</div>
-        <div>Flex3</div>
-        <div>Flex4</div>
-        <div>Flex5</div>
-        <div>Flex6</div>
-    </div>
+    {% include 'navbar.html' %}
 {% endblock header %}
