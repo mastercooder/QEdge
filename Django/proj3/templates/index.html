@@ -1,15 +1,14 @@
 {% extends 'base.html' %}
-
-{% block title %}
-    {{title}}
-{% endblock title %}
+{% load static %}
 
 {% block header %}
-    <h1>My Site App Development: {{msg}}</h1>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <div class="headerContainer">
+        <div>Flex1</div>
+        <div>Flex2</div>
+        <div>Flex3</div>
+        <div>Flex4</div>
+        <div>Flex5</div>
+        <div>Flex6</div>
+    </div>
 {% endblock header %}
-
-{% block main %}
-    <h3>This is index Page</h3>
-    <h3>This is index Page</h3>
-    <h3>This is index Page</h3>
-{% endblock main %}

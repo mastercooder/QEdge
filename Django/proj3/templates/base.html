@@ -5,29 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    <title>
-        {% block title %}
-            MySite
-        {% endblock title %}  
-    </title>
-</head>
+    <title>Base</title>
+</head> 
 <body>
-    <header>
-        {% block header %}
-            <h1>Django App Development</h1>
-        {% endblock header %}
-    </header>
-    <main>
-        {% block main %}
-            <h3>Base Page</h3>
-            <h3>Base Page</h3>
-            <h3>Base Page</h3>
-        {% endblock main %}
-    </main>
-    <footer>
-        {% block footer %}
-            <h1>Thanks</h1>
-        {% endblock footer %}
-    </footer>
+    <div class="container">
+        <div class="header">
+            {% block header %}
+            {% endblock header %}
+        </div>
+        <div class="left">
+            {% block left %}
+            {% endblock left %}
+        </div>
+        <div class="main">
+            {% block main %}
+            {% endblock main %}
+        </div>
+        <div class="right">
+            {% block right %}
+            {% endblock right %}
+        </div>
+        <div class="footer">
+            {% block footer %}
+            {% endblock footer %}
+        </div>
+    </div>
 </body>
 </html>

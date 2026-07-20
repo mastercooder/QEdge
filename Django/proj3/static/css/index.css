@@ -1,0 +1,9 @@
+.headerContainer{
+    display: flex;
+    line-height: 10vh;
+    gap: 2rem;
+    margin-left: 1rem;
+    color: red;
+    font-size: 1.2rem;
+    justify-content: space-around;
+}
