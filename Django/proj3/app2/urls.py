@@ -1,5 +1,5 @@
 from django.urls import path
-from app1 import views
+from app2 import views
 
 # Create requrest here for App2 Application
 
