@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <title>
         {% block title %}
@@ -21,7 +22,7 @@
             {% block left %}
             {% endblock left %}
         </div>
-        <div class="main">
+        <div class="main d-flex align-items-center justify-content-center">
             {% block main %}
             {% endblock main %}
         </div>
@@ -35,4 +36,7 @@
         </div>
     </div>
 </body>
+<script{% static 'js/bootstrap.js' %}></script>
+<script{% static 'js/jquery.js' %}></script>
+<script{% static 'js/popper.js' %}></script>
 </html>

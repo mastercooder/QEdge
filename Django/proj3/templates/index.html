@@ -1,7 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block title %}
+    {{title }}
+{% endblock title %}
+
 {% block header %}
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
     {% include 'navbar.html' %}
 {% endblock header %}
+
+{% block main %}
+    {{msg}}
+{% endblock main %}

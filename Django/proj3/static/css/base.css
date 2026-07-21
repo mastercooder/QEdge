@@ -28,7 +28,6 @@
                          'left main right'
                          'footer footer footer';
     grid-template-columns: 1fr 4fr 1fr;
-    border: 1px solid black;
     gap: 1rem;
     padding: 0.5rem;
 }
