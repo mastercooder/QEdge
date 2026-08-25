@@ -2,29 +2,33 @@ from django.db import models
 
 # Create your models here.
 
-class student(models.Model):
-    sid = models.IntegerField()
-    sname = models.CharField(max_length=20)
-    email = models.EmailField(max_length=35)
-    course = models.CharField(max_length=20)
+# class student(models.Model):
+#     sid = models.IntegerField()
+#     sname = models.CharField(max_length=20)
+#     email = models.EmailField(max_length=35)
+#     course = models.CharField(max_length=20)
     
-    def __str__(self):
-        return self.sname
+#     def __str__(self):
+#         return self.sname
     
+
+# --------------------------- Student2 ----------------------------------
 
 class student2(models.Model):
     sid = models.IntegerField()
     sname = models.CharField(max_length=20)
     email = models.EmailField(max_length=35)
-    contact = models.IntegerField(max_length=10)
+    contact = models.CharField(max_length=10)
     create_at = models.DateTimeField()
     joined_at = models.DateField()
     course = models.CharField(max_length=20)
-    
+
     def __str__(self):
         return self.sname
-    
-    
+
+
+# --------------------------- Student3 ----------------------------------
+
 class student3(models.Model):
     sid = models.BigAutoField(primary_key=True)
     firstName = models.CharField(max_length=15)
@@ -38,6 +42,61 @@ class student3(models.Model):
     studentStatus = models.BooleanField(default=True)
     projectURL = models.URLField(max_length=200)
     aboutMe = models.TextField(max_length=500)
-    
+
     def __str__(self):
-        return self.firstName + " " + self.lastName 
+        return self.firstName + " " + self.lastName
+
+
+# --------------------------- Course ----------------------------------
+
+class Course(models.Model):
+
+    coursesList = [
+        ("python", "Python"),
+        ("java", "Java"),
+        ("react", "React"),
+        ("js", "JavaScripts"),
+        ("aws", "AWS"),
+        ("gcp", "GCP"),
+    ]
+
+    categoryList = [
+        ("coding", "Coding"),
+        ("cloud", "Cloud"),
+    ]
+
+    cname = models.CharField(
+        max_length=50,
+        choices=coursesList,
+        default="js"
+    )
+
+    crCat = models.CharField(
+        max_length=15,
+        choices=categoryList
+    )
+
+    dur = models.IntegerField(
+        help_text="Duration Should be in Months"
+    )
+
+    fee = models.IntegerField()
+
+
+# --------------------------- Student ----------------------------------
+
+class Student(models.Model):
+    sid = models.IntegerField()
+    sname = models.CharField(max_length=30)
+    email = models.EmailField(max_length=40)
+    contact = models.CharField(max_length=10)
+    DOJ = models.DateField()
+    aboutMe = models.TextField(max_length=500)
+
+    course = models.ForeignKey(
+        Course,
+        on_delete=models.CASCADE
+    )
+
+    def __str__(self):
+        return self.sname
