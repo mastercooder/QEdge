@@ -60,9 +60,9 @@ class StudentAdmin(admin.ModelAdmin):
     list_display = [
         'sid',
         'sname',
-        'email',
         'contact',
         'DOJ',
+        'email',
         'aboutMe',
-        'course'
+        'fee'
     ]

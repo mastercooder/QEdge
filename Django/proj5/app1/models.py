@@ -81,6 +81,9 @@ class Course(models.Model):
     )
 
     fee = models.IntegerField()
+    
+    def __str__(self):
+        return self.cname
 
 
 # --------------------------- Student ----------------------------------
@@ -92,11 +95,11 @@ class Student(models.Model):
     contact = models.CharField(max_length=10)
     DOJ = models.DateField()
     aboutMe = models.TextField(max_length=500)
-
     course = models.ForeignKey(
         Course,
         on_delete=models.CASCADE
     )
+    fee = models.DecimalField(max_digits=7, decimal_places=2)
 
     def __str__(self):
         return self.sname
