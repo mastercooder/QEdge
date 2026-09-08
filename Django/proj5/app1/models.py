@@ -65,23 +65,11 @@ class Course(models.Model):
         ("cloud", "Cloud"),
     ]
 
-    cname = models.CharField(
-        max_length=50,
-        choices=coursesList,
-        default="js"
-    )
-
-    crCat = models.CharField(
-        max_length=15,
-        choices=categoryList
-    )
-
-    dur = models.IntegerField(
-        help_text="Duration Should be in Months"
-    )
-
+    cname = models.CharField(max_length=50,choices=coursesList,verbose_name='Course', unique=True)
+    crCat = models.CharField(max_length=15,choices=categoryList, verbose_name="Category")
+    dur = models.IntegerField(help_text="Duration Should be in Months", verbose_name='Duration')
     fee = models.IntegerField()
-    
+
     def __str__(self):
         return self.cname
 
@@ -97,7 +85,7 @@ class Student(models.Model):
     aboutMe = models.TextField(max_length=500)
     course = models.ForeignKey(
         Course,
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE # one-many relationship
     )
     fee = models.DecimalField(max_digits=7, decimal_places=2)
 
