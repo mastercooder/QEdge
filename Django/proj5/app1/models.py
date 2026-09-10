@@ -2,14 +2,24 @@ from django.db import models
 
 # Create your models here.
 
-# class student(models.Model):
-#     sid = models.IntegerField()
-#     sname = models.CharField(max_length=20)
-#     email = models.EmailField(max_length=35)
-#     course = models.CharField(max_length=20)
+# IntegerField, CharField, EmailField, DateField, DateTimeField, AutoField
+# Foreignkey, OneToOneField, ManyToManyField
+
+
+# Many to Many Relationship
+# ========================================
+class Course1(models.Model):
+    crName = models.CharField(max_length=20)
     
-#     def __str__(self):
-#         return self.sname
+    def __str__(self):
+        return self.crName
+    
+class Student1(models.Model):
+    sname = models.CharField(max_length=25)
+    courses = models.ManyToManyField(Course1)
+    
+    def __str__(self):
+        return self.sname
     
 
 # --------------------------- Student2 ----------------------------------
@@ -91,3 +101,12 @@ class Student(models.Model):
 
     def __str__(self):
         return self.sname
+    
+    
+class IDCard(models.Model):
+    student = models.OneToOneField(Student, on_delete=models.CASCADE)
+    cardNum = models.CharField(max_length=10, unique=True)
+    issue_Date = models.DateField()
+    
+    def __str__(self):
+        return self.cardNum

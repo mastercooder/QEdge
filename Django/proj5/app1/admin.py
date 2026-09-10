@@ -3,6 +3,8 @@ from app1.models import Student
 from app1.models import student2
 from app1.models import student3
 from app1.models import Course
+from app1.models import IDCard
+from app1.models import Course1, Student1
  
 # Register your models here.
 
@@ -64,5 +66,29 @@ class StudentAdmin(admin.ModelAdmin):
         'DOJ',
         'email',
         'aboutMe',
-        'fee'
+        'fee' 
+    ]
+    
+@admin.register(IDCard)
+class IDCardAdmin(admin.ModelAdmin):
+    list_display = [
+        'student',
+        'cardNum',
+        'issue_Date',
+    ]
+    
+    
+
+# Many to Many Relationship
+# ========================================
+@admin.register(Course1)
+class Course1Admin(admin.ModelAdmin):
+    list_display = [
+        'crName'
+    ]
+    
+@admin.register(Student1)
+class Student1Admin(admin.ModelAdmin):
+    list_display = [
+        'sname', 
     ]
