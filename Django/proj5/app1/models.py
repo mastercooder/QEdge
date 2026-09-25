@@ -21,6 +21,28 @@ class Student1(models.Model):
     def __str__(self):
         return self.sname
     
+    
+# Composite Primary Key |------| this is avalable in 5.2 version only not in 5.0 and 5.1
+# ========================================
+
+class AllStudent(models.Model):
+    branch_id = models.CharField(max_length=3)
+    student_id = models.CharField(max_length=4)
+    sname = models.CharField(max_length=10)
+    
+    
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                field = ['branch_id', 'student_id'],
+                name = "branch_student_cpk"
+            )
+        ]
+    
+    def __str__(self):
+        return self.sname
+    
+    
 
 # --------------------------- Student2 ----------------------------------
 

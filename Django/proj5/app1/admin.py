@@ -5,6 +5,7 @@ from app1.models import student3
 from app1.models import Course
 from app1.models import IDCard
 from app1.models import Course1, Student1
+from app1.models import AllStudent
  
 # Register your models here.
 
@@ -60,6 +61,7 @@ class CourseAdmin(admin.ModelAdmin):
 @admin.register(Student)
 class StudentAdmin(admin.ModelAdmin):
     list_display = [
+        'id',
         'sid',
         'sname',
         'contact',
@@ -72,6 +74,7 @@ class StudentAdmin(admin.ModelAdmin):
 @admin.register(IDCard)
 class IDCardAdmin(admin.ModelAdmin):
     list_display = [
+        'id',
         'student',
         'cardNum',
         'issue_Date',
@@ -84,11 +87,24 @@ class IDCardAdmin(admin.ModelAdmin):
 @admin.register(Course1)
 class Course1Admin(admin.ModelAdmin):
     list_display = [
+        'id',
         'crName'
     ]
     
 @admin.register(Student1)
 class Student1Admin(admin.ModelAdmin):
     list_display = [
+        'id',
         'sname', 
+    ]
+    
+# Composite Primary Key
+# ========================================
+@admin.register(AllStudent)
+class AllStudentAdmin(admin.ModelAdmin):
+    list_display = [
+        'id',
+        'branch_id',
+        'student_id',
+        'sname',
     ]
