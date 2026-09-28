@@ -34,7 +34,7 @@ class AllStudent(models.Model):
     class Meta:
         constraints = [
             models.UniqueConstraint(
-                field = ['branch_id', 'student_id'],
+                fields = ['branch_id', 'student_id'],
                 name = "branch_student_cpk"
             )
         ]
