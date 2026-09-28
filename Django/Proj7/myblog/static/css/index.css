@@ -1,0 +1,35 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: lightsalmon;
+    font-size: 1.2rem;
+}
+h1{
+    text-align: center;
+    font-size: 3rem;
+    text-decoration: underline;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: gray;
+    padding: 1rem;
+}
+nav{
+    margin: 1rem;
+    font-size: 1.2rem;
+    text-align: center;
+}
+h3{
+    margin: 2rem;
+}
+
+.content{
+    margin: 1rem;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+.content pre {
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
