@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+    {{title}}
+{% endblock title %}
+
+{% block heading %}
+    <h1>{{heading}}</h1>
+{% endblock heading %}
+
+{% block navbar %}
+    <a href="{% url 'app1:app1page' %}">App1</a>
+{% endblock navbar %}
+
+{% block msg %}
+    <h3>{{msg}}</h3>
+{% endblock msg %}

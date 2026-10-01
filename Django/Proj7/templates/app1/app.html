@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/app1.css' %}">
+{% endblock %}
+
+{% block title %}
+    {{title}}
+{% endblock title %}
+
+{% block heading %}
+    <h1>{{heading}}</h1>
+{% endblock heading %}
+
+{% block navbar %}
+    <a href="{% url 'app1:newstudent' %}">New Student</a>
+{% endblock navbar %}
+
+{% block msg %}
+    <h3>{{msg}}</h3>
+{% endblock msg %}
