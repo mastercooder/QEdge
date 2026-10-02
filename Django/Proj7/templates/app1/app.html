@@ -15,7 +15,7 @@
 {% endblock heading %}
 
 {% block navbar %}
-    <a href="{% url 'app1:newstudent' %}">New Student</a>
+    {% include "navbar.html" %}
 {% endblock navbar %}
 
 {% block msg %}

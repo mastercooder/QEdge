@@ -2,6 +2,10 @@
 
 {% load static %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock%}
+
 {% block title %}
     {{title}}
 {% endblock title %}
@@ -11,7 +15,7 @@
 {% endblock heading %}
 
 {% block navbar %}
-    <a href="{% url 'app1:app1page' %}">App1</a>
+    {% include "navbar.html" %}
 {% endblock navbar %}
 
 {% block msg %}
