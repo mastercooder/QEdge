@@ -1,5 +1,5 @@
 from django.contrib import admin
-from app1.models import Course
+from app1.models import Course, Student
 
 # Register your models here.
 
@@ -10,4 +10,16 @@ class CourseAdmin(admin.ModelAdmin):
         'course_name',
         'dur',
         'fee'
+    ]
+    
+@admin.register(Student)
+class StudentAdmin(admin.ModelAdmin):
+    list_display = [
+        'id',
+        'sname',
+        'email',
+        'contact',
+        'age',
+        'join_date',
+        'gender'
     ]

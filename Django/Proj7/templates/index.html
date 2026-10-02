@@ -15,7 +15,8 @@
 {% endblock heading %}
 
 {% block navbar %}
-    {% include "navbar.html" %}
+        <a href="{% url 'index' %}">Home</a>
+        <a href="{% url 'app1:app1page' %}">App1</a>
 {% endblock navbar %}
 
 {% block msg %}

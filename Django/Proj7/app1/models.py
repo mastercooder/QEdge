@@ -10,4 +10,13 @@ class Course(models.Model):
     def __str__(self):
         return self.course_name
 
+class Student(models.Model):
+    sname = models.CharField(max_length=20)
+    email = models.EmailField(max_length=30)
+    contact = models.CharField(max_length=10)
+    age = models.IntegerField()
+    join_date = models.DateField()
+    gender = models.CharField(max_length=1)
     
+    def __str__(self):
+        return self.email

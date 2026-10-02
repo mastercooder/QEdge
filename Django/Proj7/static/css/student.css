@@ -2,6 +2,9 @@
     padding: 0;
     margin: 0;
 }
+body{
+    background-color: lightgreen;
+}
 header{
     color: red;
     background-color: aqua;
