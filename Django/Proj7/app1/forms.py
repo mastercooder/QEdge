@@ -5,11 +5,13 @@ from app1.models import Course
 class CourseForms(forms.ModelForm):
     class Meta:
         model = Course
-        # To display all the fields
-        fields = '__all__'
-       
-        # Display selected Fields
-        # fields = ['course_name', 'dur']
+        fields = '__all__'         # To display all the fields
+       # Display selected Fields   # fields = ['course_name', 'dur']
+        labels = {
+            'course_name': "Course",
+            'dur': 'Duration',
+            'fee': 'Fees'
+        }
         
 
 class StudentForms(forms.Form):

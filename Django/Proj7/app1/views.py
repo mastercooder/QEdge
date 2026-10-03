@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from app1.forms import StudentForms, CourseForms
 from app1.models import Student, Course as AllCourses
 
@@ -78,4 +78,28 @@ def allCourses(request):
         'courses': courses
     }
 
-    return render(request, 'app1/all_courses.html', context)
+    return render(request, 'app1/allCourse.html', context)
+
+
+def update_course(request, id):
+    cr = get_object_or_404(AllCourses, id=id)             # new style
+    # cr = AllCourses.objects.get(id=id)                  # old style
+    if request.method == 'POST':
+        form = CourseForms(request.POST, instance=cr)
+        if form.is_valid():
+            form.save()
+            return redirect('app1:allcourses')
+    else:
+        form = CourseForms(instance=cr)
+    context = {
+        'title': 'updating...',
+        'heading': 'Updating Course Data',
+        'form': form
+    }
+    return render(request, 'app1/course.html', context)
+
+def delete_course(request, id):
+    cr = get_object_or_404(AllCourses, id=id)
+    if request.method == 'POST':
+        cr.delete()
+        return redirect('app1:allcourses')

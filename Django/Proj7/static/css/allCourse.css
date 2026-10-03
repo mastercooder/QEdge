@@ -1,0 +1,39 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: lightgreen;
+}
+header{
+    color: red;
+    background-color: aqua;
+    text-align: center;
+    padding: 1rem;
+}
+main h3{
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-decoration: underline;
+}
+main table{
+    margin-right: auto;
+    margin-left: auto;
+    border: 2px solid black;
+}
+main table th{
+    padding: 1rem;
+    border: 2px solid black;
+}
+main table td{
+    border: 3px solid black;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+table input{
+    border-radius: 1rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+}

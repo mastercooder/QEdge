@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/allCourse.css' %}">
+    <title>{{title}}</title>
+</head>
+<body>
+    <header>
+        <h1>{{heading}}</h1>
+        {% include "navbar.html" %}
+    </header>
+    <main>
+        <h3>List of Courses</h3>
+        <table>
+                <th>CID</th>
+                <th>NAME</th>
+                <th>DURATION</th>
+                <th>FEE</th>
+                <th>Action</th>
+                {% for cr in courses %}
+                    <tr>
+                        <td>{{cr.id}}</td>
+                        <td>{{cr.course_name}}</td>
+                        <td>{{cr.dur}}</td>
+                        <td>{{cr.fee}}</td>
+                        <td>
+                            <a href="{% url 'app1:updatecourse' cr.id %}">Update</a><br>
+                            <form method="post" action="{% url 'app1:deletecourse' cr.id %}">
+                                {% csrf_token %}
+                                <input type="submit" value="Delete">
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+        </table>
+
+    </main>
+</body>
+</html>
