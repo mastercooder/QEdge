@@ -81,6 +81,7 @@ def allCourses(request):
     return render(request, 'app1/allCourse.html', context)
 
 
+
 def update_course(request, id):
     cr = get_object_or_404(AllCourses, id=id)             # new style
     # cr = AllCourses.objects.get(id=id)                  # old style
@@ -97,6 +98,8 @@ def update_course(request, id):
         'form': form
     }
     return render(request, 'app1/course.html', context)
+
+
 
 def delete_course(request, id):
     cr = get_object_or_404(AllCourses, id=id)

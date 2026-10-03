@@ -10,7 +10,7 @@ class CourseForms(forms.ModelForm):
         labels = {
             'course_name': "Course",
             'dur': 'Duration',
-            'fee': 'Fees'
+            'fee': 'Fees '
         }
         
 
